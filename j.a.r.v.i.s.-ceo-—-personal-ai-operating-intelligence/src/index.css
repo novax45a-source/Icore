@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --jarvis-blue: #00f0ff;
+    --jarvis-blue-dim: rgba(0, 240, 255, 0.2);
+    --jarvis-cyan: #00b4d8;
+    --jarvis-dark: #030712;
+    --jarvis-panel: rgba(10, 22, 40, 0.75);
+    --jarvis-border: rgba(0, 240, 255, 0.25);
+  }
+
+  body {
+    background-color: #030712;
+    color: #e0f2fe;
+    font-family: 'Chakra Petch', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-tech {
+    font-family: 'Orbitron', monospace, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Futuristic HUD and Holographic Utilities */
+.hud-glass {
+  background: rgba(6, 15, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.08), inset 0 0 16px 0 rgba(0, 240, 255, 0.04);
+}
+
+.hud-glass-interactive {
+  background: rgba(8, 20, 40, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hud-glass-interactive:hover {
+  background: rgba(12, 30, 60, 0.85);
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.25), inset 0 0 12px rgba(0, 240, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.hud-glow {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.hud-border-glow {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+}
+
+.hud-scanline {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 240, 255, 0.025) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.01),
+    rgba(0, 255, 0, 0.005),
+    rgba(0, 0, 255, 0.01)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.7);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}

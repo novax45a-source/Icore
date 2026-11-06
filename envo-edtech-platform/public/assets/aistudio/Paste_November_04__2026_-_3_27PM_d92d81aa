@@ -1,0 +1,1523 @@
+# ENVO — ULTIMATE COMPLETE PRODUCT DEVELOPMENT PROMPT
+## FULL REBUILD OF MISSING FEATURES, BUG FIXING, DATABASE, SECURITY, UI/UX, TESTING AND PRODUCTION LAUNCH
+
+You are the principal CTO, senior full-stack engineer, software architect, database architect, cybersecurity engineer, product designer, DevOps engineer and QA lead responsible for completing the existing ENVO platform.
+
+Your job is to transform my EXISTING Lovable-generated ENVO project into a complete, reliable, production-ready commercial EdTech platform.
+
+You must work directly inside the existing VS Code repository.
+
+THIS IS AN IMPLEMENTATION TASK.
+
+Do not merely explain how the project should be built.
+Do not return only a roadmap.
+Do not generate another generic website.
+Do not replace the existing application with a completely different project.
+
+Inspect the existing application, understand it, preserve its valuable functionality, fix its problems, implement missing features, test everything and prepare it for commercial launch.
+
+The most important requirement is to preserve BOTH business models described below.
+
+---
+
+# 1. EXISTING PROJECT INFORMATION
+
+Project directory:
+
+C:\Users\acer\envo-platform
+
+GitHub repository:
+
+https://github.com/novax45a-source/envo-platform
+
+Current working branch:
+
+deployment/envo-lovable
+
+Supabase project reference:
+
+axxkrokrtyryjugwtdna
+
+Existing technology:
+
+- React.
+- TypeScript.
+- Vite.
+- Supabase.
+- PostgreSQL.
+- Supabase Authentication.
+- Supabase Storage.
+- Supabase Edge Functions.
+- Tailwind CSS.
+- Existing React components.
+- Existing dashboards.
+- Existing routing.
+
+The current project was developed through Lovable.
+
+Keep the existing application as the foundation.
+
+## 1.1 CRITICAL PROJECT PRESERVATION
+
+The repository currently contains uncommitted modifications and untracked files.
+
+Before changing anything:
+
+1. Inspect `git status`.
+2. Verify the current branch.
+3. Inspect the package configuration.
+4. Inspect all application routes.
+5. Inspect all existing source files.
+6. Inspect existing Supabase integrations.
+7. Inspect local SQL migrations.
+8. Identify important untracked files.
+9. Identify backups and temporary files.
+10. Identify existing functionality that must be preserved.
+
+Never use:
+
+- `git reset --hard`
+- `git clean -fd`
+- `git checkout -- .`
+- `git restore .`
+- Unreviewed mass deletion.
+- Force push.
+- Database resets.
+
+Do not overwrite existing local modifications.
+
+Do not switch to another branch.
+
+Do not blindly run `git add .`.
+
+Do not push to GitHub without my explicit approval.
+
+Do not deploy to production without my explicit approval.
+
+Create safe checkpoints before substantial changes.
+
+Keep `.env` private.
+
+Keep `supabase/.temp/` out of Git.
+
+Do not commit local backups, temporary ZIP archives, private configuration or generated audit artifacts.
+
+Preserve valuable assets and source code.
+
+---
+
+# 2. THE MOST IMPORTANT PRODUCT DECISION
+
+ENVO has TWO separate business models operating inside ONE platform.
+
+Neither business model may destroy or interfere with the other.
+
+## BUSINESS MODEL A — LEARNING CENTER SaaS
+
+This is the existing product.
+
+It must remain fully functional.
+
+Do not remove it.
+
+Do not replace it with the new independent teacher marketplace.
+
+Do not change its existing subscription model without approval.
+
+Existing features include:
+
+- Learning center registration.
+- Center profiles.
+- Center-specific branding.
+- Center administrator accounts.
+- Center subscriptions.
+- Standard plan.
+- Premium plan.
+- Pro+ plan.
+- Subscription payments.
+- Subscription renewal.
+- Teachers.
+- Students.
+- Parents.
+- Groups.
+- Classes.
+- Homework.
+- Homework submissions.
+- Teacher performance.
+- Student progress.
+- Parent portal.
+- Center administration.
+- Super Admin management.
+
+Existing plan configuration:
+
+| Plan | Current price | Old price |
+|---|---:|---:|
+| Standard | $80 | $100 |
+| Premium | $112 | $132 |
+| Pro+ | $200 | $250 |
+
+Existing frontend plan duration is configured as 27 days.
+
+The existing live `confirm_payment()` database function extends subscriptions in 30-day intervals.
+
+This discrepancy must be audited.
+
+Do not silently alter the current commercial agreement.
+
+Preserve the existing live subscription behavior until a clear and approved decision is made.
+
+Learning Center subscription revenue belongs to the existing subscription business model.
+
+Keep its payments separate from independent teacher lesson payments.
+
+## BUSINESS MODEL B — INDEPENDENT TEACHER MARKETPLACE
+
+This is the new product expansion.
+
+Independent teachers and independent students must be able to use ENVO without belonging to a Learning Center.
+
+Independent teachers:
+
+- Register.
+- Create profiles.
+- Submit verification documents.
+- Get approved.
+- Publish courses.
+- Create groups.
+- Offer individual lessons.
+- Manage schedules.
+- Teach online.
+- Manage students.
+- Receive earnings.
+- Request withdrawals.
+
+Independent students:
+
+- Register.
+- Find teachers.
+- Search subjects.
+- Filter teachers.
+- View profiles.
+- Enroll in groups.
+- Book individual lessons.
+- Make payments.
+- Attend lessons.
+- Submit homework.
+- Track progress.
+- Review teachers.
+
+This must be a real educational marketplace.
+
+## 2.1 MARKETPLACE COMMISSION
+
+The approved financial model:
+
+Teacher: 83%.
+
+ENVO: 17%.
+
+Example:
+
+Student pays 500,000 UZS.
+
+Teacher receives 415,000 UZS.
+
+ENVO receives 85,000 UZS.
+
+Do not change these percentages.
+
+Apply this split to the commissionable lesson amount.
+
+Record payment-provider processing fees separately. Do not silently change the 83% / 17% business agreement to account for them.
+
+If the exact processing-fee allocation requires a business decision, identify it clearly and continue implementing the accounting structure without inventing the decision.
+
+---
+
+# 3. CURRENT LIVE DATABASE — KNOWN FACTS
+
+The live Supabase database has been inspected.
+
+Existing public tables:
+
+- `center_subscriptions`
+- `centers`
+- `envo_centers`
+- `envo_groups`
+- `envo_homework`
+- `envo_payments`
+- `envo_students`
+- `envo_submissions`
+- `super_admins`
+- `user_roles`
+
+All ten tables currently have Row Level Security enabled.
+
+Existing role values:
+
+- `super_admin`
+- `lc_admin`
+- `teacher`
+- `student`
+- `parent`
+
+Existing important facts:
+
+`user_roles.user_id` is its primary key.
+
+A user currently has one primary role.
+
+Existing Learning Center users have `center_id`.
+
+The live database currently contains:
+
+- 1 center administrator.
+- 1 Super Admin.
+- 1 teacher.
+- No independent student accounts were found in the inspected role records.
+
+All three inspected accounts are currently center-linked.
+
+Existing helper functions:
+
+- `my_center()`
+- `my_role()`
+- `is_super()`
+- `envo_is_super_admin()`
+- `is_admin_of(uuid)`
+- `teaches_group(uuid)`
+- `teaches_homework(uuid)`
+
+Existing application architecture uses:
+
+`src/context/AuthContext.tsx`
+
+`src/App.tsx`
+
+`src/lib/app.ts`
+
+`src/lib/plans.ts`
+
+`src/lib/supabase.ts`
+
+`src/pages/StudentDashboard.tsx`
+
+`src/pages/TeacherDashboard.tsx`
+
+`src/pages/LcAdminDashboard.tsx`
+
+`src/pages/SuperAdminDashboard.tsx`
+
+`src/pages/CenterWorkspace.tsx`
+
+Do not assume an existing table or feature is absent simply because it was not included in the known list. Inspect the live schema and actual code before creating new objects.
+
+## 3.1 TWO CENTER TABLES
+
+The database contains both:
+
+- `centers`
+- `envo_centers`
+
+Existing foreign keys and the frontend primarily use `envo_centers`.
+
+Do not merge or delete these tables without establishing their relationships and proving that the operation is safe.
+
+## 3.2 EXISTING PAYMENT STATUS
+
+The live database currently has:
+
+- `request_payment()` — exists.
+- `confirm_payment(uuid, integer)` — exists.
+- `review_manual_payment(...)` — missing.
+- `envo_payment_events` — missing.
+- `envo_payments.currency` — missing.
+- `envo_payments.requested_by` — missing.
+- `envo_payments.reviewed_by` — missing.
+
+The frontend currently calls:
+
+- `request_payment()` from `CenterWorkspace.tsx`.
+- `request_payment()` from `OnboardingPage.tsx`.
+- `review_manual_payment()` from `SuperAdminDashboard.tsx`.
+
+This creates an existing Learning Center payment workflow defect.
+
+The local migration:
+
+`supabase/migrations/20261013120000_security_payment_workflows.sql`
+
+contains an attempted solution.
+
+It has not been confirmed as applied to the live database.
+
+The Supabase migration-history table previously queried was unavailable.
+
+Do not blindly apply this migration.
+
+Inspect it, compare the live database, preserve existing policies and safely implement the missing functionality through a carefully reviewed migration.
+
+---
+
+# 4. COMPLETE ACCOUNT ARCHITECTURE
+
+The two business models must coexist.
+
+## 4.1 CENTER ACCOUNTS
+
+Preserve all existing center users.
+
+- `lc_admin`
+- Center `teacher`
+- Center `student`
+- Center `parent`
+
+These users retain their existing center-specific functionality.
+
+They must not be redirected to the independent marketplace dashboard accidentally.
+
+## 4.2 INDEPENDENT ACCOUNTS
+
+Add support for:
+
+- Independent teacher.
+- Independent student.
+
+These accounts do not require an `envo_centers` record.
+
+They must be allowed to operate with `center_id = NULL` under a properly defined account-scope and permission system.
+
+Preserve the existing primary role system where possible.
+
+Recommended account scopes:
+
+- `center`
+- `independent`
+- `platform`
+
+Design the scope mapping carefully.
+
+Do not assign user permissions based only on a frontend value.
+
+Use database constraints and secure server-side operations.
+
+Do not accidentally treat every account with `center_id = NULL` as a Super Admin.
+
+Do not allow an independent teacher to create an arbitrary Learning Center administrator account.
+
+## 4.3 ACCOUNT ROUTING
+
+The application must distinguish:
+
+1. Learning Center teacher.
+2. Independent teacher.
+3. Learning Center student.
+4. Independent student.
+5. Learning Center administrator.
+6. Parent.
+7. Super Admin.
+
+Preserve the old dashboard for Learning Center teachers and students.
+
+Create a separate independent teacher dashboard and independent student application, or use a carefully separated and tested shared-component architecture.
+
+The account scope must determine the correct dashboard.
+
+---
+
+# 5. AUTHENTICATION
+
+Preserve existing Supabase authentication.
+
+Existing authentication supports email/password and recovery flows.
+
+Extend it without breaking existing accounts.
+
+Requirements:
+
+- Email registration.
+- Email/password login.
+- Google OAuth.
+- Secure password recovery.
+- Session persistence.
+- Logout.
+- Correct redirect handling.
+- Role-aware onboarding.
+- Account-scope-aware onboarding.
+
+## FOUNDER GOOGLE ACCOUNT
+
+Official Founder Google account:
+
+novax45.a@gmail.com
+
+The Founder must receive global Super Admin privileges after successful verified Google authentication.
+
+Requirements:
+
+- Continue with Google button.
+- No additional ENVO password required for Google sign-in.
+- Automatic recognition after successful Google OAuth.
+- Secure OAuth callback.
+- Automatic redirect to Super Admin dashboard.
+- Existing sessions preserved.
+- Secure logout.
+- Subsequent sign-in works.
+
+Security:
+
+- Google must authenticate the account normally.
+- Verify the identity through Supabase Auth.
+- Never trust a frontend email field to grant privileges.
+- Never assign Super Admin through localStorage.
+- Never let users edit their own roles.
+- Never expose service-role credentials.
+- Use server-side authorization and a controlled Founder provisioning process.
+
+Preserve the Founder account's existing database data.
+
+Do not remove its current center association without reviewing the consequences.
+
+If Google OAuth requires external configuration, document the exact Supabase and Google Cloud settings.
+
+Do not pretend OAuth is active until it is tested.
+
+---
+
+# 6. TEACHER APPLICATION AND VERIFICATION
+
+Independent teachers must be verified before becoming active paid teachers.
+
+## 6.1 Application information
+
+Collect:
+
+- Full legal name.
+- Username / nickname.
+- Email.
+- Phone.
+- Date of birth.
+- Gender.
+- Region.
+- Profile photograph.
+- Biography.
+- Education.
+- Teaching experience.
+- Subjects.
+- Examination tracks.
+- Certificates.
+- Identity verification information.
+
+Sensitive identity information must never appear on public profiles.
+
+## 6.2 Age rules
+
+Minimum teacher age: 16.
+
+Applicants aged 16–17 must have legally appropriate guardian consent and additional safeguards.
+
+Applicants younger than 16 cannot become teachers.
+
+## 6.3 English requirements
+
+English teaching and relevant examination preparation:
+
+- CEFR C1 or above.
+- Valid evidence required.
+
+## 6.4 Uzbekistan school subjects
+
+- Ona tili.
+- Matematika.
+- Tarix.
+- Kimyo.
+- Biologiya.
+- Fizika.
+
+Relevant teachers must submit authentic A/A+ certificates or other qualification proof approved by authorized administrators.
+
+## 6.5 Examination preparation
+
+- CEFR C1.
+- CEFR C2.
+- IELTS.
+- TOEFL.
+- SAT.
+
+SAT preparation teachers must provide verified proof of a score of 1400 or higher.
+
+IELTS and TOEFL qualification thresholds must be configurable rather than invented.
+
+## 6.6 Application statuses
+
+- Draft.
+- Submitted.
+- Under review.
+- Additional documents required.
+- Approved.
+- Rejected.
+- Suspended.
+
+Only approved teachers may publish paid marketplace courses and accept paid marketplace enrollments.
+
+Build a complete administrative verification workflow.
+
+---
+
+# 7. TEACHER MARKETPLACE
+
+Create a professional teacher discovery marketplace.
+
+Students search by:
+
+- Teacher nickname.
+- Teacher name.
+- Subject.
+- Examination track.
+- Course.
+- Region.
+
+Filters:
+
+- Gender.
+- Age range.
+- Qualification.
+- Certificates.
+- Subject.
+- Experience.
+- Price.
+- Rating.
+- Verified reviews.
+- Individual lessons.
+- Group lessons.
+- Schedule.
+- Online teaching.
+- Region.
+
+Teacher cards:
+
+- Photograph.
+- Nickname.
+- Verification badge.
+- Subjects.
+- Qualifications.
+- Experience.
+- Rating.
+- Review count.
+- Group price.
+- Individual lesson price.
+- Availability.
+- Profile link.
+
+Teacher profile:
+
+- Biography.
+- Approved qualifications.
+- Certificates.
+- Teaching methodology.
+- Courses.
+- Subjects.
+- Reviews.
+- Schedules.
+- Lesson prices.
+- Verified student outcomes.
+
+Only share student achievements with appropriate consent.
+
+Sponsored promotion:
+
+Initial proposed price: $20.
+
+Sponsored placements must be clearly labeled and must not manipulate organic reviews or ratings.
+
+---
+
+# 8. COURSES, GROUPS AND BOOKINGS
+
+Independent teachers can create unlimited groups.
+
+Each group must have 1–3 students.
+
+This limit must be enforced transactionally at the database/backend level.
+
+Frontend-only limits are insufficient.
+
+Prevent race conditions where multiple students attempt to occupy the final group position simultaneously.
+
+Course fields:
+
+- Title.
+- Description.
+- Subject.
+- Examination track.
+- Level.
+- Cover image.
+- Price.
+- Duration.
+- Learning objectives.
+- Lesson structure.
+- Schedule.
+
+Teachers control their group schedules and prices.
+
+Students can:
+
+- Browse available courses.
+- Join a group.
+- Pay.
+- Receive enrollment confirmation.
+- Access paid lessons.
+- Leave or request cancellation according to defined rules.
+
+Individual lessons:
+
+- Teacher availability.
+- Available time slots.
+- Booking requests.
+- Booking confirmation.
+- Payment.
+- Rescheduling.
+- Cancellation.
+- Attendance.
+- Lesson history.
+
+Prevent double-booking.
+
+Do not invent refund and cancellation business rules silently. Make them configurable or request Founder approval where essential.
+
+---
+
+# 9. STUDENT APPLICATION
+
+Student mobile experience is a priority.
+
+Create a premium mobile-first student application.
+
+Student navigation:
+
+- Home.
+- Find Teachers.
+- My Teachers.
+- My Courses.
+- My Groups.
+- My Lessons.
+- Calendar.
+- Homework.
+- Progress.
+- Payments.
+- Notifications.
+- Profile.
+- Settings.
+
+Student features:
+
+- Registration.
+- Login.
+- Google OAuth.
+- Search teachers.
+- Filter teachers.
+- View profiles.
+- Book lessons.
+- Join groups.
+- Pay securely.
+- Attend online lessons.
+- Submit homework.
+- View teacher feedback.
+- Track academic progress.
+- Review eligible completed lessons.
+- View payment history.
+
+Do not remove or break the Learning Center student dashboard.
+
+---
+
+# 10. INDEPENDENT TEACHER DASHBOARD
+
+Create a professional SaaS workspace.
+
+Navigation:
+
+- Overview.
+- Profile.
+- Verification.
+- Courses.
+- Groups.
+- Students.
+- Individual Lessons.
+- Calendar.
+- Virtual Classroom.
+- Homework.
+- Performance.
+- Reviews.
+- Earnings.
+- Wallet.
+- Withdrawals.
+- Notifications.
+- Settings.
+
+Dashboard metrics:
+
+- Total students.
+- Active groups.
+- Upcoming lessons.
+- Completed lessons.
+- Monthly earnings.
+- Available balance.
+- Pending balance.
+- Average rating.
+
+Include analytics, schedules, recent activity and student performance.
+
+Preserve the existing Learning Center teacher experience separately.
+
+---
+
+# 11. SUPER ADMIN CONTROL CENTER
+
+Build one global administration system.
+
+## Learning Center administration
+
+- All centers.
+- Center subscriptions.
+- Subscription payments.
+- Existing plans.
+- Center administrators.
+- Center teachers.
+- Center students.
+- Parents.
+- Center activity.
+- Revenue.
+
+## Independent marketplace administration
+
+- Independent teachers.
+- Independent students.
+- Teacher applications.
+- Certificates.
+- Verification.
+- Courses.
+- Groups.
+- Bookings.
+- Lessons.
+- Marketplace transactions.
+- 17% ENVO commission.
+- Teacher wallets.
+- Withdrawals.
+- Reviews.
+- Complaints.
+- Reports.
+
+## Global administration
+
+- User management.
+- Roles and permissions.
+- Audit logs.
+- Security monitoring.
+- Notifications.
+- Platform settings.
+- Analytics.
+- Financial reports.
+
+Sensitive documents must only be accessible to authorized reviewers.
+
+Do not expose private student records unnecessarily.
+
+---
+
+# 12. PAYMENT ARCHITECTURE — TWO COMPLETELY SEPARATE FLOWS
+
+This is a critical requirement.
+
+## 12.1 LEARNING CENTER PAYMENTS
+
+Preserve the existing subscription system.
+
+Keep:
+
+- `envo_payments`
+- `center_subscriptions`
+- `request_payment()`
+- `confirm_payment()`
+- Existing pricing.
+- Existing renewal process.
+
+Fix the missing manual payment review workflow.
+
+Expected functionality:
+
+1. Center administrator submits a payment request.
+2. A pending payment is created.
+3. Super Admin sees the request.
+4. Super Admin reviews supporting evidence.
+5. Payment is approved or rejected.
+6. The payment status updates.
+7. A payment event is recorded.
+8. Subscription activation or renewal is performed consistently.
+9. The transaction can be audited.
+
+The current frontend calls:
+
+`review_manual_payment(...)`
+
+This function is currently missing from the inspected live database.
+
+The local migration contains an implementation.
+
+Review the complete migration and its RLS/GRANT changes before safely applying the missing functionality.
+
+Preserve the existing subscription plan prices.
+
+Audit the 27-day versus 30-day discrepancy and document it.
+
+Do not change subscription duration without approval.
+
+## 12.2 INDEPENDENT MARKETPLACE PAYMENTS
+
+Create a completely separate payment system.
+
+Do not reuse the center subscription payment table.
+
+Potential tables:
+
+- `marketplace_payments`
+- `teacher_wallets`
+- `teacher_wallet_transactions`
+- `teacher_payout_requests`
+- `marketplace_refunds`
+- `payment_webhook_events`
+
+Refine the design after inspecting the existing schema.
+
+Every marketplace transaction must store:
+
+- Student ID.
+- Teacher ID.
+- Booking or enrollment ID.
+- Provider.
+- Amount.
+- Currency.
+- Teacher share.
+- ENVO commission.
+- Provider processing fee.
+- Status.
+- External payment reference.
+- Timestamps.
+- Settlement information.
+
+Commission:
+
+83% teacher.
+
+17% ENVO.
+
+Use precise money arithmetic and immutable ledger operations.
+
+Prevent duplicate financial credits.
+
+Refunds and reversals must be recorded using auditable compensating transactions rather than silently editing financial history.
+
+## 12.3 PAYMENT PROVIDERS
+
+Prepare integrations for supported payment methods:
+
+- Uzcard.
+- Humo.
+- Visa.
+- Mastercard.
+
+Use authorized providers that support the required transaction flows in Uzbekistan.
+
+Implement sandbox integration before live payments.
+
+Do not invent merchant credentials.
+
+Do not claim a payment method is operational without successful end-to-end verification.
+
+Never store raw card numbers or CVV data.
+
+## 12.4 TEACHER WALLET
+
+Implement:
+
+- Available balance.
+- Pending balance.
+- Total earnings.
+- Commission breakdown.
+- Transaction ledger.
+- Withdrawal requests.
+- Payout status.
+- Transaction history.
+
+Teachers must never be able to edit wallet balances.
+
+All wallet changes must originate from secure server-side financial operations.
+
+---
+
+# 13. VIRTUAL CLASSROOM
+
+Implement a real classroom rather than a visual mockup.
+
+Features:
+
+- Teacher camera.
+- Student camera.
+- Microphone.
+- Screen sharing.
+- Camera and screen sharing simultaneously.
+- Digital whiteboard.
+- Drawing tools.
+- Text.
+- Shapes.
+- Eraser.
+- Multiple whiteboard pages.
+- Live chat.
+- File sharing.
+- Participant list.
+- Lesson timer.
+- Connection indicator.
+- Fullscreen.
+- Mobile compatibility.
+- Lesson recording.
+
+Use WebRTC or a suitable video provider.
+
+Recording must follow participant consent and applicable privacy requirements.
+
+If provider credentials are missing, implement the integration layer and identify exactly what is required.
+
+Do not represent an inactive demo as a real video classroom.
+
+---
+
+# 14. DESIGN AND USER EXPERIENCE
+
+Preserve the existing ENVO branding and Lovable visual direction.
+
+Brand:
+
+- Blue.
+- Light blue.
+- White.
+- Deep navy / black.
+
+Do not invent an unrelated design.
+
+Improve visual quality across all modules.
+
+Requirements:
+
+- Premium typography.
+- Consistent spacing.
+- Consistent component library.
+- Professional cards.
+- Modern forms.
+- Elegant navigation.
+- Responsive tables.
+- Clear status badges.
+- Smooth transitions.
+- Excellent empty states.
+- Loading skeletons.
+- Useful error messages.
+- Accessible controls.
+
+Three distinct experience types:
+
+1. Student mobile application.
+2. Teacher professional dashboard.
+3. Super Admin management center.
+
+Learning Center screens must remain functional.
+
+The interface must look like a serious international EdTech product.
+
+Avoid generic template layouts and unnecessary visual decoration.
+
+---
+
+# 15. LOCALIZATION
+
+Support:
+
+- Uzbek — default.
+- Russian.
+- English.
+
+Implement localization for:
+
+- Public website.
+- Login.
+- Registration.
+- Teacher verification.
+- Student application.
+- Teacher dashboard.
+- Center dashboard.
+- Super Admin.
+- Booking.
+- Payments.
+- Notifications.
+- Validation.
+- Error messages.
+
+Avoid scattered hardcoded translations.
+
+---
+
+# 16. DATABASE AND SECURITY
+
+All database changes must be additive and backward-compatible.
+
+Create new migrations.
+
+Do not drop existing tables.
+
+Do not reset the database.
+
+Do not replace the existing database.
+
+Do not overwrite existing data.
+
+Preserve existing Learning Center RLS policies unless a specific defect requires a reviewed fix.
+
+Add dedicated marketplace RLS policies.
+
+Test separately as:
+
+- Anonymous visitor.
+- Independent student.
+- Independent teacher.
+- Center student.
+- Center teacher.
+- Center administrator.
+- Super Admin.
+
+Protect:
+
+- Private student information.
+- Teacher identity records.
+- Certificates.
+- Financial data.
+- Wallet balances.
+- Payment provider references.
+- Administrative permissions.
+
+Never rely on frontend authorization alone.
+
+Never expose the Supabase service-role key in browser code.
+
+Use secure server-side operations and appropriate Edge Functions.
+
+Review security-definer functions and ensure fixed search paths.
+
+Review `SECURITY DEFINER` function execute grants.
+
+Do not allow unauthenticated callers to modify financial records.
+
+Do not create overly permissive RLS policies.
+
+Use secure database transactions for payment and enrollment operations.
+
+---
+
+# 17. CURRENT WINDOWS BUILD ISSUE
+
+The local environment previously produced:
+
+`An Application Control policy has blocked this file. Malicious binary reputation`
+
+The blocked executable was:
+
+`node_modules/@esbuild/win32-x64/esbuild.exe`
+
+Local Node.js version:
+
+24.21.0.
+
+Do not disable Microsoft Defender, Windows Security or Application Control.
+
+Do not bypass Windows binary reputation checks.
+
+Inspect:
+
+- Package integrity.
+- Lockfile.
+- esbuild version.
+- Platform-specific package.
+- npm installation scripts.
+- Vite compatibility.
+
+Find a safe solution.
+
+If Windows continues blocking the binary, document the issue and use a trusted CI build environment after verifying dependency integrity.
+
+Do not falsely report a successful local build.
+
+Review the 22 previously reported npm vulnerabilities individually.
+
+Do not automatically execute `npm audit fix --force`.
+
+Avoid unnecessary dependency upgrades.
+
+---
+
+# 18. TESTING REQUIREMENTS
+
+Implement real tests.
+
+## Authentication tests
+
+- Center administrator login.
+- Center teacher login.
+- Center student login.
+- Independent teacher registration.
+- Independent student registration.
+- Google OAuth.
+- Founder Super Admin recognition.
+- Password recovery.
+- Session persistence.
+- Logout.
+
+## Learning Center tests
+
+- Center registration.
+- Subscription plan selection.
+- Payment request.
+- Payment approval.
+- Payment rejection.
+- Subscription renewal.
+- Center teacher management.
+- Center student management.
+- Groups.
+- Homework.
+- Submissions.
+- Parent portal.
+
+## Marketplace tests
+
+- Teacher application.
+- Certificate uploads.
+- Age rules.
+- Admin verification.
+- Course publication.
+- Group creation.
+- Group capacity.
+- Booking.
+- Payment.
+- Student enrollment.
+- Teacher earnings.
+- Wallet transactions.
+- Withdrawal requests.
+- Reviews.
+
+## Financial tests
+
+For a 500,000 UZS eligible payment:
+
+Teacher share = 415,000 UZS.
+
+ENVO share = 85,000 UZS.
+
+Test multiple amounts and rounding.
+
+Test duplicate webhook delivery.
+
+Test failed payment.
+
+Test refund.
+
+Test unauthorized payout.
+
+Test transaction rollback.
+
+## Security tests
+
+- Role escalation.
+- Unauthorized account access.
+- RLS enforcement.
+- Cross-center access.
+- Cross-student access.
+- Identity document privacy.
+- Payment tampering.
+- Duplicate financial credits.
+- Unauthorized teacher approval.
+
+## UI tests
+
+- Desktop.
+- Tablet.
+- Mobile.
+- Uzbek.
+- English.
+- Russian.
+- Loading.
+- Empty.
+- Error.
+- Success.
+- Disabled controls.
+
+---
+
+# 19. DEPLOYMENT
+
+Prepare deployment using:
+
+GitHub:
+
+`novax45a-source/envo-platform`
+
+Hosting:
+
+Cloudflare Pages.
+
+Backend:
+
+Existing Supabase project.
+
+For a verified React + Vite project, expected build configuration:
+
+Build command:
+
+`npm run build`
+
+Output directory:
+
+`dist`
+
+Production branch:
+
+Only the approved deployment branch.
+
+Environment variables:
+
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
+
+Do not expose secrets.
+
+Configure:
+
+- Supabase production URLs.
+- Google OAuth redirects.
+- SPA routing.
+- Cloudflare environment variables.
+- Custom domain support.
+- Error monitoring.
+- Backups.
+- Logging.
+
+Prepare a staging deployment first.
+
+Do not push or deploy without my explicit authorization.
+
+---
+
+# 20. DEVELOPMENT EXECUTION PLAN
+
+You must execute this work in a structured sequence.
+
+## PHASE 1 — PROJECT AUDIT
+
+Create:
+
+`docs/ENVO_FULL_SYSTEM_AUDIT.md`
+
+Inspect the full codebase and current Supabase schema.
+
+Record every existing feature, missing function, bug, security risk and external dependency.
+
+Do not stop here.
+
+## PHASE 2 — PRESERVE AND FIX EXISTING CENTER PRODUCT
+
+Fix the existing Learning Center payment workflow.
+
+Review the missing:
+
+- `review_manual_payment()`
+- `envo_payment_events`
+- Payment-related columns.
+
+Safely prepare migration changes.
+
+Preserve existing center pricing, role permissions, subscriptions and data.
+
+Test the complete center payment process.
+
+## PHASE 3 — AUTHENTICATION AND USER SCOPES
+
+Implement independent user registration and correct role-based routing.
+
+Preserve existing center-linked authentication.
+
+Implement Founder Google OAuth and secure Super Admin authorization.
+
+## PHASE 4 — INDEPENDENT TEACHER SYSTEM
+
+Implement teacher applications, qualifications, certificates, verification and profiles.
+
+## PHASE 5 — STUDENT MARKETPLACE
+
+Implement search, teacher profiles, filters, courses, group discovery and booking.
+
+## PHASE 6 — TEACHER MANAGEMENT
+
+Implement independent teacher dashboard, courses, groups, calendar, homework, students and performance.
+
+## PHASE 7 — MARKETPLACE PAYMENTS
+
+Implement separate 83% / 17% payment accounting, transactions, wallets and withdrawals.
+
+## PHASE 8 — GLOBAL ADMINISTRATION
+
+Implement combined Learning Center and marketplace administration.
+
+## PHASE 9 — VIRTUAL CLASSROOM
+
+Implement real communication architecture and classroom functionality.
+
+## PHASE 10 — QUALITY ASSURANCE
+
+Run all tests.
+
+Fix defects.
+
+Repeat failed tests.
+
+Do not claim completion without test evidence.
+
+## PHASE 11 — STAGING AND PRODUCTION PREPARATION
+
+Prepare a safe staging deployment.
+
+Verify authentication, routing, data isolation and all major workflows.
+
+Produce the launch checklist.
+
+---
+
+# 21. DEVELOPMENT RULES
+
+You are expected to implement the maximum possible functionality without repeatedly asking me to approve ordinary code changes.
+
+Use technical judgment.
+
+Do not ask questions about requirements already specified.
+
+However, request explicit approval before:
+
+- Production database migrations.
+- Deleting existing information.
+- Changing established subscription prices.
+- Changing the center subscription duration.
+- Changing the 83% / 17% agreement.
+- Committing or pushing code.
+- Production deployment.
+- Spending money.
+- Enabling live payment credentials.
+- Performing irreversible operations.
+
+When credentials are missing:
+
+- Implement the integration structure.
+- Build the required interface.
+- Create validation and error handling.
+- Document exact configuration steps.
+- Do not fake successful operation.
+
+Do not leave placeholder buttons.
+
+Do not create fake transactions.
+
+Do not create fake teacher verification.
+
+Do not invent analytics or production statistics.
+
+Do not report untested features as complete.
+
+Keep a development tracker:
+
+`docs/ENVO_PRODUCTION_READINESS.md`
+
+Use statuses:
+
+- NOT_STARTED
+- IN_PROGRESS
+- IMPLEMENTED
+- TESTED
+- BLOCKED
+- EXTERNAL_CONFIGURATION_REQUIRED
+
+Update it continuously.
+
+---
+
+# 22. FINAL ACCEPTANCE STANDARD
+
+The project is ready for commercial launch only when:
+
+1. Both business models operate independently.
+2. Existing Learning Center subscriptions work.
+3. Existing center users can still use their dashboards.
+4. Independent teachers can register and be verified.
+5. Independent students can register and find teachers.
+6. Teachers can publish courses.
+7. Groups enforce the 1–3 student capacity.
+8. Individual lessons can be booked.
+9. Marketplace payments work securely.
+10. The 83% / 17% split is correct.
+11. Teacher wallets work.
+12. Withdrawals are secure.
+13. Super Admin controls both business models.
+14. Google OAuth works.
+15. Database security policies are tested.
+16. Mobile and desktop interfaces work.
+17. Major tests pass.
+18. Build succeeds in an approved environment.
+19. Staging deployment succeeds.
+20. All external launch dependencies are documented.
+
+A product cannot be called 100% operational while its required payment credentials, video provider configuration or production OAuth configuration are still missing.
+
+Make these dependencies explicit.
+
+---
+
+# FINAL INSTRUCTION
+
+START NOW.
+
+Work directly inside:
+
+`C:\Users\acer\envo-platform`
+
+Preserve the existing Lovable ENVO project.
+
+Do not create a different website.
+
+Do not remove Learning Center SaaS.
+
+Do not change its existing subscription model.
+
+Add the complete independent Teacher & Student Marketplace.
+
+Keep all existing data.
+
+Fix the missing payment workflow.
+
+Implement proper authentication.
+
+Implement the new 83% / 17% financial architecture.
+
+Build complete dashboards.
+
+Implement real functionality.
+
+Test everything.
+
+Prepare the product for controlled commercial launch.
+
+Your responsibility is to move ENVO from its current incomplete state to the highest possible tested production-ready state.
+
+**Do not stop after creating a plan. Audit, implement, test, fix and document the actual application.**

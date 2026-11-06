@@ -1,0 +1,12 @@
+{
+  "name": "ENVO EdTech Platform",
+  "description": "Commercial EdTech platform uniting Learning Center SaaS management and the Independent Teacher & Student Marketplace.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "display-capture"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

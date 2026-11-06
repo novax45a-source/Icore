@@ -1,0 +1,1494 @@
+# ENVO — COMPLETE PLATFORM REDESIGN, FEATURE EXPANSION & IMPLEMENTATION MASTER PROMPT
+
+## ROLE
+
+Act as a world-class multidisciplinary product team consisting of:
+
+- Senior Full-Stack Engineers
+- Senior React and TypeScript Developers
+- Supabase Database Architects
+- AI Engineers
+- UI/UX Designers
+- Product Designers
+- EdTech Specialists
+- Security Engineers
+- QA Engineers
+
+Your mission is to transform the existing ENVO platform into a complete, premium, modern international EdTech ecosystem.
+
+This is an existing project. You must IMPROVE AND EXTEND IT, NOT REBUILD IT FROM SCRATCH.
+
+Do not just provide recommendations, mockups, or a development plan. Inspect the existing repository, understand the architecture, and implement the requested improvements directly in the project wherever possible.
+
+---
+
+# PART 1 — PROJECT PRESERVATION AND INITIAL AUDIT
+
+Existing project:
+
+- Project path: `C:\Users\acer\envo-platform`
+- Frontend: Existing React + TypeScript application.
+- Backend: Existing Supabase infrastructure.
+- Existing authentication, database, user roles, subscriptions, payments, dashboards, and components must be preserved.
+
+Before changing anything:
+
+1. Inspect the entire existing codebase.
+2. Understand the current routes, components, hooks, services, and database structure.
+3. Identify existing functionality and incomplete functionality.
+4. Review Supabase tables, relationships, policies, triggers, and Edge Functions.
+5. Identify existing bugs and duplicated logic.
+6. Build an internal feature map of the platform.
+7. Determine which existing components can be improved instead of replaced.
+
+### Strict preservation rules
+
+- Do not delete working functionality.
+- Do not recreate existing features unnecessarily.
+- Do not replace the existing database with a new database.
+- Do not remove existing user roles.
+- Do not change the existing Learning Center subscription system.
+- Do not break existing payment workflows.
+- Do not expose Supabase service-role keys in frontend code.
+- Do not remove or weaken Row Level Security.
+- Avoid destructive database migrations.
+- Do not introduce fake data into production dashboards.
+- Keep all existing routes working.
+- Ensure backward compatibility with existing user accounts.
+
+Make safe, incremental changes with reversible migrations.
+
+---
+
+# PART 2 — ENVO BRAND IDENTITY AND PREMIUM DESIGN SYSTEM
+
+The entire application must receive a consistent premium redesign.
+
+## 2.1 Logo and identity
+
+Use the ENVO logo style from the supplied visual reference.
+
+The logo direction:
+
+- Abstract geometric electric-blue E symbol.
+- White ENVO wordmark.
+- Modern, minimal, recognizable design.
+- Clean geometric proportions.
+- Professional international technology-company appearance.
+
+The logo must remain consistent across:
+
+- Website
+- Authentication screens
+- Student application
+- Teacher dashboard
+- Learning Center dashboard
+- Parent dashboard
+- Super Admin dashboard
+- Mobile navigation
+- Loading screens
+- Emails and notifications where supported
+
+Do not generate a completely different logo.
+
+## 2.2 Brand colors
+
+Use this palette:
+
+| Name | Hex |
+|---|---|
+| Primary Blue | #1F5BFF |
+| Light Blue | #8EC5FF |
+| Deep Navy | #050B1A |
+| White | #FFFFFF |
+| Secondary Navy | #0A1530 |
+| Border | #1B2B4A |
+
+Use blue as the primary accent.
+
+## 2.3 Visual direction
+
+The design should feel like a premium international technology product.
+
+Use:
+
+- Clean typography.
+- Manrope or a similar modern font.
+- Sophisticated spacing.
+- High-quality icons.
+- Carefully designed data visualizations.
+- Subtle gradients.
+- Elegant hover effects.
+- Smooth but restrained animations.
+- Consistent rounded corners.
+- Excellent responsive layouts.
+- Carefully controlled glassmorphism.
+
+Avoid excessive neon, visual clutter, unnecessary gradients, oversized buttons, and generic dashboard templates.
+
+Do not sacrifice readability for decoration.
+
+## 2.4 Light, Dark and System themes
+
+Create a complete global theme system.
+
+Modes:
+
+1. Light Mode
+2. Dark Mode
+3. System Default
+
+Requirements:
+
+- The selected theme must persist after logout and login where appropriate.
+- Every page must support all themes.
+- Every dialog, menu, chart, table, input, editor, classroom and notification panel must adapt.
+- No white text on white surfaces.
+- No invisible input borders.
+- No unreadable charts.
+- Respect the operating system preference in System mode.
+- Add a smooth theme transition without excessive animation.
+
+Create reusable design tokens rather than styling pages independently.
+
+---
+
+# PART 3 — COMPLETE AUTHENTICATION SYSTEM
+
+Redesign all authentication experiences.
+
+## 3.1 Login
+
+Create a premium login page with:
+
+- ENVO logo.
+- Email.
+- Password.
+- Show/hide password.
+- Remember me.
+- Forgot password.
+- Sign in button.
+- Google authentication if already configured.
+- Clear validation errors.
+- Loading indicators.
+- Error and success states.
+- Responsive layout.
+
+## 3.2 Registration
+
+Support appropriate registration flows for:
+
+- Students.
+- Teachers.
+- Parents.
+- Learning Centers.
+
+Do not allow a normal user to register as Super Admin.
+
+Super Admin access must be granted through secure authorization by an existing authorized administrator.
+
+## 3.3 Teacher application
+
+Teachers must complete an application before receiving teacher access.
+
+Preserve the existing ENVO teacher eligibility rules, including:
+
+- Minimum age of 16.
+- English proficiency requirement of C1 or higher, with proof.
+- Required subject qualifications and certificates.
+- A or A+ certificates for relevant Uzbek school subjects, including Physics where applicable.
+- Supporting documents.
+- Identity information.
+- Region and contact information.
+- Subject selection.
+- Exam preparation track selection.
+
+Teacher application states:
+
+- Draft.
+- Submitted.
+- Under Review.
+- Approved.
+- Rejected.
+- Changes Required.
+
+Only approved teachers can publish lessons and teach.
+
+## 3.4 Password recovery and verification
+
+Add or improve:
+
+- Email verification.
+- Password reset.
+- Secure password changes.
+- Session management.
+- Optional two-factor authentication when supported by the existing authentication architecture.
+
+## 3.5 Role-based redirection
+
+After login, automatically redirect users to their correct dashboard:
+
+- Student → Student Dashboard.
+- Teacher → Teacher Dashboard.
+- Parent → Parent Dashboard.
+- LC Admin → Learning Center Admin Dashboard.
+- Super Admin → Super Admin Dashboard.
+
+Access must be enforced by the backend, not just hidden frontend navigation.
+
+---
+
+# PART 4 — COMPLETE DASHBOARD ECOSYSTEM
+
+Every role must have a distinct dashboard, navigation structure, and permissions.
+
+## 4.1 Student Dashboard
+
+Include:
+
+- Welcome section.
+- Profile overview.
+- Active courses.
+- Upcoming lessons.
+- Learning progress.
+- Completed lessons.
+- Assignments.
+- Exams.
+- Practice exercises.
+- Learning materials.
+- Attendance.
+- Achievements.
+- Certificates.
+- Messages.
+- Notifications.
+- Teacher discovery.
+- Personal learning analytics.
+- JARVIS AI Assistant.
+
+Student navigation:
+
+1. Dashboard
+2. My Courses
+3. Explore Teachers
+4. Schedule
+5. Classroom
+6. Assignments
+7. Practice
+8. Exams
+9. Materials
+10. Results
+11. Portfolio
+12. Messages
+13. JARVIS
+14. Settings
+
+Students should be able to use the platform comfortably from a mobile device.
+
+## 4.2 Teacher Dashboard
+
+Include:
+
+- Overview.
+- Active students.
+- Total groups.
+- Individual students.
+- Monthly earnings.
+- ENVO commission.
+- Upcoming lessons.
+- Attendance.
+- Assignments.
+- Exams.
+- Materials.
+- Course builder.
+- Exercise builder.
+- Exam builder.
+- Digital classroom.
+- Whiteboard.
+- Student progress.
+- Reviews.
+- Schedule.
+- Earnings and payouts.
+- Messages.
+- JARVIS AI Assistant.
+- Settings.
+
+Teacher navigation:
+
+1. Dashboard
+2. My Classes
+3. Students
+4. Schedule
+5. Classroom
+6. Assignments
+7. Materials
+8. Practice Builder
+9. Exam Builder
+10. Course Builder
+11. Analytics
+12. Earnings
+13. Messages
+14. JARVIS
+15. Settings
+
+Preserve existing teacher payment logic: ENVO keeps 17% and the teacher receives 83%, subject to the existing payment workflow.
+
+All commission calculations must remain server-side.
+
+## 4.3 Parent Dashboard
+
+Include:
+
+- Linked children.
+- Academic progress.
+- Attendance.
+- Grades.
+- Upcoming lessons.
+- Teacher feedback.
+- Homework status.
+- Exam results.
+- Notifications.
+- Payment history where authorized.
+- Reports.
+- Settings.
+
+Parents must only see information for students they are authorized to access.
+
+## 4.4 Learning Center Admin Dashboard
+
+Include:
+
+- Learning Center overview.
+- Student management.
+- Teacher management.
+- Group management.
+- Course management.
+- Classroom schedules.
+- Attendance.
+- Exams.
+- Homework.
+- Materials.
+- Performance analytics.
+- Payments.
+- Subscriptions.
+- Reports.
+- Certificates.
+- Notifications.
+- Learning Center settings.
+
+Learning Centers must be able to create their own educational content manually.
+
+The existing subscription plans must remain unchanged:
+
+- Standard
+- Premium
+- Pro Plus
+
+Do not replace or break the current subscription and payment system when extending the independent-teacher functionality.
+
+## 4.5 Super Admin Dashboard
+
+Create a comprehensive platform management dashboard.
+
+Include:
+
+- Total users.
+- Students.
+- Teachers.
+- Learning Centers.
+- Active subscriptions.
+- Platform revenue.
+- Payment monitoring.
+- Teacher approval requests.
+- Learning Center approval and management.
+- User management.
+- Reports.
+- Platform analytics.
+- Support management.
+- System notifications.
+- Security logs.
+- Feature configuration.
+- Platform settings.
+
+Super Admin must have appropriate permissions, but sensitive actions must still be logged and protected.
+
+---
+
+# PART 5 — ADVANCED TEACHER CLASSROOM AND DIGITAL WHITEBOARD
+
+This is one of the most important improvements.
+
+The existing classroom whiteboard has problems with typing and text editing.
+
+Fix the underlying interaction issues instead of adding another decorative toolbar.
+
+## 5.1 Full whiteboard functionality
+
+The digital whiteboard must support:
+
+- Freehand drawing.
+- Pen.
+- Highlighter.
+- Eraser.
+- Pointer.
+- Text.
+- Shapes.
+- Lines.
+- Arrows.
+- Rectangles.
+- Circles.
+- Images.
+- Sticky notes.
+- Background selection.
+- Multiple pages.
+- Zoom.
+- Undo.
+- Redo.
+- Clear page with confirmation.
+- Save.
+- Reopen saved boards.
+- Export to PNG or PDF where supported.
+
+## 5.2 Text tool — CRITICAL
+
+Teachers must be able to write text using their keyboard.
+
+Implement a reliable text editing system.
+
+Required behavior:
+
+1. Teacher selects Text.
+2. Teacher clicks anywhere on the whiteboard.
+3. A text box appears.
+4. Teacher can immediately type using the physical keyboard.
+5. Text remains editable.
+6. Teacher can select existing text and change it.
+7. Teacher can move, resize and reposition the text box.
+8. Teacher can duplicate or delete text objects.
+
+Fix keyboard event conflicts between canvas tools and text inputs.
+
+When the text editor is active, normal typing must not be intercepted by whiteboard keyboard shortcuts.
+
+Use a reliable editable overlay or equivalent approach with correct keyboard focus management.
+
+## 5.3 Text formatting and colors
+
+Add a professional text formatting panel.
+
+Support:
+
+- Text color.
+- Text highlight color.
+- Text background fill.
+- Custom HEX colors.
+- Preset color palette.
+- Font size.
+- Font family.
+- Bold.
+- Italic.
+- Underline.
+- Text alignment.
+- Line spacing.
+- Text box background.
+- Transparent background.
+
+Teachers must be able to select text and apply colors directly.
+
+Example:
+
+- Write a mathematical formula.
+- Select one word.
+- Make it blue.
+- Highlight a sentence in yellow.
+- Give a text box a colored background.
+- Change the size and alignment.
+
+All changes must be visible immediately.
+
+## 5.4 Shapes and object styling
+
+Every shape should have:
+
+- Fill color.
+- Border color.
+- Border thickness.
+- Transparency.
+- Resize.
+- Rotate where appropriate.
+- Move.
+- Duplicate.
+- Delete.
+
+Allow text inside supported shapes where practical.
+
+## 5.5 Classroom collaboration
+
+Where supported by the existing architecture:
+
+- Real-time whiteboard synchronization.
+- Teacher control.
+- Student view.
+- Controlled student participation.
+- Multiple classroom pages.
+- Classroom chat.
+- Camera.
+- Microphone.
+- Screen sharing.
+- Lesson recording with proper consent and permission.
+- Upload and play educational videos.
+- Upload lesson documents.
+
+Make the whiteboard fully responsive and usable on tablets and mobile devices.
+
+---
+
+# PART 6 — ASSIGNMENT, MATERIAL AND COURSE BUILDER
+
+Teachers and Learning Center administrators must be able to create their own educational content manually.
+
+Do not limit them to static prebuilt materials.
+
+## 6.1 Assignment creation
+
+Create a complete assignment builder.
+
+Teachers and authorized LC administrators can:
+
+- Create an assignment.
+- Enter a title.
+- Write instructions.
+- Select a subject.
+- Select a group.
+- Select individual students when authorized.
+- Set a start date.
+- Set a deadline.
+- Attach materials.
+- Attach videos.
+- Upload PDFs.
+- Upload images.
+- Add interactive questions.
+- Add points.
+- Define grading criteria.
+- Publish or save as draft.
+
+Students should be able to:
+
+- Open assignments.
+- View attached materials.
+- Complete questions.
+- Submit responses.
+- Upload files when required.
+- Track submission status.
+- View grades and feedback when released.
+
+## 6.2 Material Library
+
+Create a central Material Library for teachers and Learning Centers.
+
+Supported content:
+
+- PDF.
+- DOC/DOCX where supported.
+- Images.
+- Audio.
+- Video.
+- Links.
+- Rich text.
+- Presentations.
+- Interactive exercises.
+
+Features:
+
+- Upload.
+- Manual content creation.
+- Preview.
+- Edit.
+- Delete with authorization.
+- Organize by subject.
+- Organize by level.
+- Organize by course.
+- Search.
+- Filter.
+- Reuse existing content.
+- Assign to a group.
+- Attach to an assignment.
+
+Use secure file storage and permission checks.
+
+## 6.3 Course Builder
+
+Allow authorized teachers and LC administrators to create complete courses.
+
+Course structure:
+
+Course → Module → Lesson → Material → Exercise → Assessment.
+
+Support:
+
+- Course title.
+- Description.
+- Thumbnail.
+- Subject.
+- Difficulty.
+- Learning objectives.
+- Modules.
+- Lessons.
+- Videos.
+- Documents.
+- Quizzes.
+- Homework.
+- Course completion rules.
+
+Include Draft, Preview, Publish, and Archive states.
+
+---
+
+# PART 7 — PRACTICE BUILDER AND QUESTION TYPES
+
+This feature must be implemented for both Student App practice and the Exam/Materials Builder.
+
+Teachers and authorized LC administrators must be able to create exercises themselves.
+
+Create a flexible exercise builder with reusable question components.
+
+## 7.1 Required question types
+
+Implement as many of the following as practical, with a clean extensible architecture.
+
+### A. Multiple Choice
+
+- One correct answer.
+- Several incorrect answers.
+- Optional explanation.
+- Automatic grading.
+
+### B. Multiple Select
+
+Allow several correct answers.
+
+### C. Matching Words
+
+Students match:
+
+- Word to meaning.
+- Word to translation.
+- Question to answer.
+- Concept to definition.
+
+Support drag-and-drop and accessible alternative selection.
+
+### D. Fill in the Blanks
+
+Students complete missing words in sentences or passages.
+
+### E. True or False
+
+Students identify whether statements are correct.
+
+### F. Word Ordering
+
+Students arrange words into a grammatically correct sentence.
+
+### G. Sentence Ordering
+
+Students arrange sentences or paragraphs in the correct order.
+
+### H. Categorization
+
+Students drag items into correct categories.
+
+### I. Image-Based Questions
+
+Students answer questions based on an image.
+
+### J. Listening Exercises
+
+- Audio playback.
+- Listening comprehension.
+- Questions linked to the audio.
+- Optional repeat limits.
+
+### K. Reading Comprehension
+
+- Reading passage.
+- Vocabulary support.
+- Comprehension questions.
+- Mixed question types.
+
+### L. Short Answer
+
+Students enter their own answers.
+
+Support teacher grading and automated grading only where answers can be reliably evaluated.
+
+### M. Long Answer
+
+Students write detailed responses.
+
+Teachers can manually grade them with a rubric.
+
+### N. Translation Exercises
+
+Translate:
+
+- Uzbek to English.
+- English to Uzbek.
+- Other enabled language pairs.
+
+### O. Vocabulary Practice
+
+- Word and definition.
+- Flashcards.
+- Spaced review.
+- Matching.
+- Contextual use.
+
+### P. Speaking Practice
+
+- Record voice answers with explicit microphone permission.
+- Allow teacher review.
+- Store recordings securely.
+
+### Q. Pronunciation Practice
+
+Add pronunciation feedback only when a reliable speech recognition service is configured.
+
+Do not pretend that unconfigured AI functions are working.
+
+## 7.2 Question editor requirements
+
+Every question should support:
+
+- Question text.
+- Images.
+- Audio.
+- Video where appropriate.
+- Answer options.
+- Correct answer.
+- Explanation.
+- Points.
+- Difficulty.
+- Tags.
+- Preview.
+- Duplicate.
+- Delete.
+- Reorder.
+
+Include a question bank.
+
+Teachers should be able to reuse their questions in multiple exams and assignments.
+
+## 7.3 Exercise delivery
+
+Student exercise interface must be modern and easy to use.
+
+Include:
+
+- Clear instructions.
+- Progress indicator.
+- Question navigation.
+- Answer selection.
+- Save progress.
+- Submit.
+- Review answers.
+- Results.
+- Explanations when released.
+- Mobile-friendly interactions.
+
+Do not reveal correct answers before the assessment allows it.
+
+---
+
+# PART 8 — EXAM BUILDER
+
+Create a dedicated Exam Builder for Teachers and Learning Centers.
+
+Features:
+
+- Create exam.
+- Select subject.
+- Select level.
+- Add questions manually.
+- Reuse questions from the question bank.
+- Set duration.
+- Set start and end times.
+- Set total points.
+- Set passing score.
+- Set allowed attempts.
+- Randomize questions.
+- Shuffle answer options.
+- Configure automatic grading.
+- Configure manual grading.
+- Add reading and listening sections.
+- Add answer explanations.
+- Preview as student.
+- Publish.
+- Save as draft.
+- Archive.
+
+Support exam categories:
+
+- School subjects.
+- CEFR.
+- IELTS.
+- TOEFL.
+- SAT.
+- Custom Learning Center exams.
+
+Do not hardcode all exam structures into the frontend.
+
+All exam definitions, attempts, answers and results must be stored securely in the existing Supabase architecture or safe incremental extensions.
+
+## Exam results
+
+Students can see:
+
+- Score.
+- Percentage.
+- Correct answers where released.
+- Incorrect answers where released.
+- Time used.
+- Teacher feedback.
+- Performance by section.
+
+Teachers and authorized LC admins can review results and performance analytics.
+
+Protect answer keys and unreleased exams from unauthorized users.
+
+---
+
+# PART 9 — JARVIS AI: ADVANCED VOICE, SCREEN VISION AND INTERACTION
+
+Develop JARVIS as a real AI assistant integrated into ENVO, not a static scripted chatbot.
+
+JARVIS must support all ENVO roles:
+
+- Student.
+- Teacher.
+- Parent.
+- Learning Center Admin.
+- Super Admin.
+
+The assistant should understand the user's role and current page.
+
+## 9.1 Voice and natural conversation
+
+Implement:
+
+- Text chat.
+- Voice input.
+- Text-to-speech.
+- Natural spoken responses.
+- Uzbek language.
+- Russian language.
+- English language.
+- Language detection where possible.
+- Conversation history.
+- Interruptible speech.
+- Stop speaking.
+- Replay.
+- Mute and unmute.
+- Microphone controls.
+- Voice preference settings.
+
+JARVIS should be able to hold natural multi-turn conversations.
+
+Avoid robotic scripted responses.
+
+When no AI provider or API key is configured, show a clear setup/error state rather than pretending the assistant works.
+
+## 9.2 Screen awareness
+
+JARVIS should be able to understand the user's current ENVO screen.
+
+Examples:
+
+- User opens the whiteboard and asks how to change text color.
+- JARVIS identifies the visible whiteboard tools and explains the steps.
+- User opens Exam Builder and asks how to add matching questions.
+- JARVIS understands the current interface and guides the user.
+- Student opens a lesson and asks for an explanation of the displayed topic.
+
+Implement screen awareness through a secure, permission-based approach.
+
+Requirements:
+
+- User explicitly starts screen sharing or grants permission.
+- Use the browser's permission flow.
+- Clearly indicate when screen access is active.
+- Allow screen access to be stopped immediately.
+- Access only the user-selected ENVO tab or screen.
+- Do not secretly capture screens.
+- Do not access unrelated personal files or other applications.
+- Do not store screenshots unnecessarily.
+
+Use relevant page context and accessible interface information when possible instead of capturing the entire screen repeatedly.
+
+## 9.3 On-screen navigation and interaction
+
+JARVIS should be able to assist users with navigating ENVO.
+
+Examples:
+
+- "Open my settings."
+- "Show my next lesson."
+- "Open the Exam Builder."
+- "Go to my materials."
+- "Find my Mathematics group."
+- "Help me create a new assignment."
+
+Create a controlled interaction system that can:
+
+- Navigate between authorized ENVO pages.
+- Highlight relevant interface elements.
+- Show an on-screen pointer or visual guidance.
+- Scroll to relevant sections.
+- Open permitted menus and panels.
+- Fill permitted form fields.
+- Prepare drafts.
+- Guide users through multi-step actions.
+
+The assistant may demonstrate actions visually using an on-screen pointer or controlled browser interaction.
+
+### Security and confirmation rules
+
+- Keep interaction within the ENVO environment.
+- No unrestricted access to the user's entire operating system.
+- No hidden control.
+- No permission bypass.
+- No reading passwords or secret tokens.
+- No unauthorized access to another user's data.
+- Confirm before publishing, deleting, submitting, changing sensitive settings, or performing financial actions.
+- Never bypass the permissions of the current role.
+- Log sensitive assistant actions.
+
+The user must always have a visible Stop/Cancel control.
+
+## 9.4 Role-aware intelligence
+
+### Student
+- Explain lessons.
+- Help with practice.
+- Explain wrong answers.
+- Build study plans.
+- Recommend relevant materials.
+- Explain upcoming tasks.
+
+### Teacher
+- Help prepare lessons.
+- Help create exercises.
+- Draft assignments.
+- Explain analytics.
+- Help organize schedules.
+- Guide whiteboard usage.
+
+### Parent
+- Explain authorized student reports.
+- Explain grades and attendance.
+- Summarize progress.
+
+### Learning Center Admin
+- Explain center analytics.
+- Help organize groups.
+- Draft reports.
+- Assist with authorized management tasks.
+
+### Super Admin
+- Explain authorized platform analytics.
+- Help review system information.
+- Prepare reports.
+
+JARVIS must never invent platform capabilities or data.
+
+## 9.5 AI architecture
+
+Use a maintainable provider-independent AI service layer.
+
+Requirements:
+
+- Server-side API keys.
+- No exposed secrets in frontend.
+- Context-aware prompts.
+- Role permissions.
+- Secure conversation storage.
+- Error handling.
+- Rate limits.
+- Usage tracking.
+- Optional retrieval-augmented generation from actual ENVO documentation and approved data.
+
+JARVIS must follow the same backend permissions as the user.
+
+---
+
+# PART 10 — COMPLETE ENVO SETTINGS CENTER
+
+Create a dedicated, polished Settings section.
+
+Settings must not be a single basic page.
+
+Use organized categories, clear navigation, helpful descriptions, forms, validation, save states, and confirmation dialogs.
+
+The available settings must adapt to the user's role.
+
+## 10.1 My Account
+
+- Full name.
+- Username.
+- Email.
+- Phone number.
+- Profile picture.
+- Date of birth where required.
+- Region.
+- Personal information.
+- Change password.
+- Email verification status.
+- Account status.
+
+## 10.2 Profile
+
+For Students:
+- Education level.
+- Interests.
+- Learning goals.
+- Preferred subjects.
+
+For Teachers:
+- Qualifications.
+- Certificates.
+- Subjects.
+- Teaching experience.
+- Lesson prices.
+- Teaching preferences.
+- Availability.
+
+For Parents:
+- Linked students.
+- Notification preferences.
+
+For Learning Centers:
+- Center name.
+- Logo.
+- Description.
+- Contact information.
+- Address.
+- Branding.
+
+## 10.3 Appearance
+
+- Light.
+- Dark.
+- System.
+- Accent color where supported.
+- Interface density.
+- Font size.
+- Reduced motion.
+- Accessibility preferences.
+
+## 10.4 Language and Region
+
+- Uzbek.
+- Russian.
+- English.
+- Time zone.
+- Date format.
+- Time format.
+- Regional preferences.
+
+All visible application text should use a consistent translation system.
+
+Do not leave random untranslated labels when switching languages.
+
+## 10.5 Notifications
+
+Allow users to configure:
+
+- Lesson reminders.
+- New assignments.
+- Exam reminders.
+- Results.
+- Messages.
+- Teacher announcements.
+- Parent reports.
+- Payment notifications.
+- System announcements.
+- Email notifications.
+- In-app notifications.
+
+Add notification preferences by category.
+
+## 10.6 Privacy and Security
+
+- Active sessions.
+- Sign out from other sessions where supported.
+- Password management.
+- Two-factor authentication if configured.
+- Profile visibility.
+- Privacy controls.
+- Data permissions.
+- Account deletion request workflow.
+
+## 10.7 AI and Voice Settings
+
+- Enable/disable JARVIS.
+- Voice conversation.
+- Spoken responses.
+- Voice selection where supported.
+- Assistant language.
+- Microphone permission.
+- Screen access permission.
+- Conversation history preferences.
+- Automatic welcome message.
+- Screen interaction permission.
+- Stop all active AI sessions.
+
+## 10.8 Classroom Settings
+
+For teachers and Learning Centers:
+
+- Default lesson duration.
+- Classroom preferences.
+- Whiteboard defaults.
+- Default text color.
+- Default font size.
+- Default board background.
+- Student participation controls.
+- Recording preferences.
+- Camera and microphone preferences.
+- Material permissions.
+
+## 10.9 Payments and Billing
+
+For authorized users:
+
+- Payment methods where supported.
+- Payment history.
+- Subscription information.
+- Invoices.
+- Teacher earnings.
+- Commission details.
+- Payout history.
+- Learning Center subscription details.
+
+Never expose another user's financial information.
+
+## 10.10 Learning Center Settings
+
+For LC Admins:
+
+- Center information.
+- Logo and branding.
+- Teachers.
+- Groups.
+- Students.
+- Enrollment rules.
+- Payment options.
+- Notification templates.
+- Academic calendar.
+- Default language.
+- Time zone.
+- Center-specific permissions.
+
+## 10.11 Help and Support
+
+- Help Center.
+- FAQs.
+- Contact support.
+- Report a problem.
+- Feature requests.
+- Terms of Service.
+- Privacy Policy.
+
+## 10.12 Settings implementation rules
+
+- Save changes properly.
+- Display unsaved-change warnings.
+- Validate every form.
+- Use proper authorization.
+- Persist user preferences.
+- Provide clear success/error messages.
+- Ensure settings work across all themes and devices.
+
+Do not create decorative settings controls that do nothing.
+
+---
+
+# PART 11 — MOBILE APP EXPERIENCE
+
+The Student App must be especially optimized for mobile users.
+
+Build a responsive mobile-first experience.
+
+Mobile navigation:
+
+- Home.
+- Courses.
+- Explore.
+- Messages.
+- Profile.
+
+Additional functionality should be available through organized menus.
+
+Optimize:
+
+- Lesson playback.
+- Exercise interactions.
+- Matching exercises.
+- Multiple-choice questions.
+- Exam taking.
+- Material viewing.
+- Audio exercises.
+- Notifications.
+- JARVIS voice interaction.
+- Profile and settings.
+
+The Teacher Dashboard and LC Admin Dashboard must also remain usable on tablets and mobile devices.
+
+Avoid simply shrinking the desktop layout.
+
+Create genuine mobile layouts.
+
+---
+
+# PART 12 — ANALYTICS AND REPORTING
+
+Build functional dashboards based on real database information.
+
+Examples:
+
+Student:
+- Learning progress.
+- Completed exercises.
+- Exam scores.
+- Attendance.
+- Learning time.
+
+Teacher:
+- Student progress.
+- Group activity.
+- Lesson attendance.
+- Earnings.
+- Assignment completion.
+
+Learning Center:
+- Active students.
+- Teacher performance.
+- Group performance.
+- Revenue.
+- Subscription status.
+
+Super Admin:
+- Platform activity.
+- User growth.
+- Center statistics.
+- Subscription statistics.
+- Financial analytics.
+
+Support:
+
+- Date filters.
+- Weekly/monthly/yearly views.
+- Search.
+- Export where authorized.
+- Charts.
+- Detailed records.
+
+Never display fabricated numbers as real business metrics.
+
+Use clearly labeled demo data only in isolated development previews.
+
+---
+
+# PART 13 — SECURITY AND DATA INTEGRITY
+
+Security is mandatory.
+
+Implement and verify:
+
+- Supabase Row Level Security.
+- Role-based access control.
+- Server-side validation.
+- Secure file access.
+- Protected administrative operations.
+- Secure payment workflows.
+- Data isolation between Learning Centers.
+- Parent-to-student access validation.
+- Teacher-to-group access validation.
+- Exam answer protection.
+- Audit logs for sensitive actions.
+- Safe file upload validation.
+- Rate limiting where appropriate.
+
+Do not rely solely on frontend role checks.
+
+Users must never be able to access restricted records by changing URLs or API requests.
+
+AI must never bypass normal authorization.
+
+---
+
+# PART 14 — UX QUALITY AND MICRO-INTERACTIONS
+
+Create a consistent high-quality experience across the platform.
+
+Include:
+
+- Professional loading states.
+- Skeleton screens.
+- Empty states.
+- Error states.
+- Confirmation dialogs.
+- Toast notifications.
+- Search experiences.
+- Advanced filters.
+- Pagination where needed.
+- Accessible tooltips.
+- Keyboard navigation.
+- Responsive tables.
+- Consistent modal design.
+- Smooth transitions.
+- Clear success messages.
+
+Every visible button must have a real action.
+
+Every form must validate.
+
+Every navigation item must lead somewhere meaningful.
+
+Do not leave unfinished placeholder pages.
+
+---
+
+# PART 15 — IMPLEMENTATION STRATEGY
+
+Implement the platform in a controlled order.
+
+### Phase 1 — Audit and Foundation
+- Inspect repository.
+- Map existing functionality.
+- Establish design tokens.
+- Build reusable UI components.
+- Implement global themes.
+- Improve authentication.
+
+### Phase 2 — Dashboard Redesign
+- Student.
+- Teacher.
+- Parent.
+- Learning Center Admin.
+- Super Admin.
+
+### Phase 3 — Classroom and Whiteboard
+- Fix keyboard text entry.
+- Implement text formatting.
+- Implement color controls.
+- Improve shapes and pages.
+- Verify saving and synchronization.
+
+### Phase 4 — Content Creation
+- Material Library.
+- Assignment Builder.
+- Course Builder.
+- Practice Builder.
+- Question Bank.
+- Exam Builder.
+
+### Phase 5 — JARVIS AI
+- Text AI.
+- Voice AI.
+- Multilingual conversation.
+- Role-aware context.
+- Screen awareness.
+- Controlled navigation and interactions.
+- Permission and confirmation flows.
+
+### Phase 6 — Settings
+- Complete settings architecture.
+- Role-specific settings.
+- Appearance.
+- Language.
+- Privacy.
+- Security.
+- AI.
+- Classroom.
+- Billing.
+
+### Phase 7 — Mobile Experience
+- Student mobile app.
+- Teacher mobile experience.
+- Admin responsive experience.
+
+### Phase 8 — Testing and Stabilization
+- Authentication testing.
+- Role permissions.
+- Database tests.
+- Whiteboard typing tests.
+- Whiteboard color tests.
+- Exercise creation tests.
+- Exam submission tests.
+- AI permission tests.
+- Mobile responsive tests.
+- Theme tests.
+- Build and lint checks.
+
+---
+
+# PART 16 — FINAL ACCEPTANCE CRITERIA
+
+Do not consider the project complete until the following are verified:
+
+1. Existing ENVO functionality still works.
+2. Authentication works for all supported roles.
+3. Every role receives the correct dashboard.
+4. Light, Dark and System themes work throughout the application.
+5. ENVO's visual identity is consistent.
+6. Teacher whiteboard supports reliable physical keyboard typing.
+7. Text can be selected, edited, colored, highlighted and placed inside colored text boxes.
+8. Shapes support fill and border colors.
+9. Teachers can create assignments manually.
+10. Teachers and LC Admins can upload and create materials.
+11. Teachers and LC Admins can build interactive exercises.
+12. Matching, multiple-choice and other question types work.
+13. Exams can be created, assigned, submitted and evaluated.
+14. Students can complete exercises comfortably on mobile.
+15. JARVIS can communicate through text and voice when configured.
+16. JARVIS understands ENVO's pages and user roles.
+17. Screen awareness requires explicit permission.
+18. Screen interactions stay within authorized ENVO functionality.
+19. JARVIS cannot bypass permissions.
+20. Settings work and persist.
+21. Existing payment and subscription logic remains intact.
+22. RLS and data security remain effective.
+23. No important routes are broken.
+24. No major TypeScript or production build errors remain.
+
+## FINAL INSTRUCTION
+
+Treat ENVO as a serious international EdTech product, not a simple school management website.
+
+The final result must combine:
+
+- Premium international design.
+- Powerful educational tools.
+- Advanced interactive classrooms.
+- Flexible content creation.
+- Professional exams and exercises.
+- Useful AI assistance.
+- Complete role-based dashboards.
+- Comprehensive settings.
+- Strong security.
+- Excellent mobile usability.
+
+Prioritize real functionality over visual decoration.
+
+Do not sacrifice existing features to make the redesign easier.
+
+Implement changes incrementally, test them, and report exactly:
+
+1. What was successfully implemented.
+2. Which files were modified.
+3. Which database changes were made.
+4. Which features require API keys or external configuration.
+5. Which features remain incomplete.
+6. Any known bugs or limitations.
+
+Do not claim that a feature is complete unless it has actually been implemented and tested.

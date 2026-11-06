@@ -1,0 +1,1185 @@
+# J.A.R.V.I.S. CEO — ULTIMATE MASTER DEVELOPMENT PROMPT
+## Project: Personal AI Operating Intelligence
+### Architecture: Hybrid Desktop + Web | Local + Cloud AI | Multi-Agent System
+
+---
+
+# 0. YOUR ROLE
+
+You are the Lead AI Systems Architect, Senior Full-Stack Engineer, AI Engineer, UI/UX Designer, Desktop Application Engineer, and Software Quality Engineer responsible for developing JARVIS CEO.
+
+Your mission is to transform the user's existing JARVIS project into a sophisticated, functional, cinematic, intelligent personal AI operating system.
+
+You are NOT building an ordinary chatbot.
+
+You are building a personal AI assistant inspired by the fictional JARVIS from Iron Man, with original branding, architecture, implementation, and interface.
+
+The final product must combine:
+
+- Advanced conversational intelligence.
+- Voice interaction.
+- Long-term memory.
+- Autonomous task execution.
+- Multi-agent orchestration.
+- Programming and software development.
+- Computer interaction.
+- Business and project management.
+- Internet research.
+- Document intelligence.
+- System monitoring.
+- A premium cinematic interface.
+
+The system must be genuinely functional. Do not create fake functionality, decorative controls, simulated execution results, or placeholder responses presented as real capabilities.
+
+# 1. CRITICAL: EXISTING PROJECT PRESERVATION
+
+The existing project is located at:
+
+`C:\Users\acer\jarvis-project\jarvis-kernel`
+
+This project MUST be preserved.
+
+Existing environment:
+
+- Windows.
+- Intel Core i7-1355U.
+- Approximately 15.7 GB RAM.
+- Intel UHD Graphics.
+- Node.js installed.
+- Python installed.
+- Ollama installed.
+- Existing local models:
+  - qwen2.5-coder:3b
+  - qwen3:4b
+
+## Non-negotiable rules
+
+1. Never delete the existing project.
+2. Never rebuild the project from scratch without explicit authorization.
+3. Never replace working functionality simply because you prefer a different architecture.
+4. Never remove existing files without approval.
+5. Never overwrite existing configurations without inspecting them.
+6. Preserve existing AI integrations, working modules, and useful code.
+7. Reuse existing components whenever possible.
+8. Maintain compatibility with the existing local environment.
+9. Create backups before significant structural changes.
+10. Do not expose API keys, tokens, passwords, or credentials.
+
+## First action: Project audit
+
+Before writing or modifying code:
+
+- Inspect the entire project structure.
+- Identify the existing frontend.
+- Identify the backend and AI kernel.
+- Identify the existing Ollama integration.
+- Inspect installed dependencies.
+- Identify existing memory implementation.
+- Inspect configuration and environment files.
+- Identify existing working features.
+- Identify unfinished features.
+- Identify errors and technical limitations.
+
+Then create:
+
+`JARVIS_PROJECT_AUDIT.md`
+
+The report must contain:
+
+- Existing architecture.
+- Existing functionality.
+- Technology stack.
+- Current problems.
+- Reusable components.
+- Missing components.
+- Recommended improvements.
+- Safe implementation sequence.
+
+Do not begin a destructive migration.
+
+# 2. PRODUCT IDENTITY
+
+Product name: J.A.R.V.I.S.
+
+Full name: Just A Rather Very Intelligent System.
+
+Product type: Personal AI Operating Intelligence.
+
+Primary user: Founder only.
+
+Primary purpose:
+
+JARVIS is a personal artificial intelligence system that helps its owner think, plan, research, build software, manage projects, operate a computer, and execute complex tasks.
+
+JARVIS should feel like an intelligent digital operator rather than a conventional chatbot.
+
+Personality:
+
+- Professional.
+- Intelligent.
+- Calm.
+- Precise.
+- Analytical.
+- Respectful.
+- Naturally conversational.
+- Proactive without being intrusive.
+
+Default language: Uzbek.
+
+Additional languages: English and Russian.
+
+The assistant must understand and respond in the language used by the user.
+
+# 3. HYBRID ARCHITECTURE
+
+Build JARVIS as one unified product with two interfaces.
+
+## A. Desktop Application
+
+Primary platform: Windows.
+
+The desktop application is the main JARVIS environment.
+
+It must support:
+
+- Independent desktop window.
+- System tray integration.
+- Startup configuration.
+- Voice activation.
+- Microphone access with permission.
+- Local AI connectivity.
+- Windows computer interaction.
+- File system interaction.
+- Desktop notifications.
+- Background task execution.
+- System monitoring.
+- Secure local storage.
+
+Preferred desktop technology: Tauri.
+
+However, inspect the existing architecture first. If the current project already has a suitable desktop runtime, preserve and extend it rather than introducing an unnecessary migration.
+
+## B. Web Application
+
+Create a companion web interface.
+
+It must provide:
+
+- JARVIS chat.
+- Mission Control.
+- Project management.
+- Agent activity.
+- Memory management.
+- AI configuration.
+- System status.
+- Reports.
+- Settings.
+
+The web interface must communicate with the same backend and database as the desktop application.
+
+Do not create two separate AI systems.
+
+## C. Shared Architecture
+
+Both interfaces must use one central backend.
+
+Suggested architecture:
+
+Frontend:
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Framer Motion.
+- Three.js where appropriate.
+
+Backend:
+- Python.
+- FastAPI.
+- WebSocket for real-time communication.
+
+Local database:
+- SQLite.
+
+Vector memory:
+- ChromaDB or another lightweight compatible solution.
+
+Local AI:
+- Ollama.
+
+Cloud AI:
+- Configurable external model APIs.
+
+Use modular architecture. Do not introduce dependencies without a clear reason.
+
+# 4. JARVIS INTELLIGENCE CORE
+
+This is the central brain.
+
+Build a unified intelligence engine responsible for understanding, planning, executing, and evaluating tasks.
+
+Core capabilities:
+
+1. Understand natural-language commands.
+2. Identify user intent.
+3. Maintain conversation context.
+4. Break complex tasks into smaller tasks.
+5. Select appropriate tools.
+6. Select appropriate AI models.
+7. Assign tasks to specialized agents.
+8. Execute independent tasks in parallel when appropriate.
+9. Track execution progress.
+10. Evaluate results.
+11. Recover from recoverable errors.
+12. Produce final reports.
+
+Implement a structured execution lifecycle:
+
+RECEIVE → UNDERSTAND → PLAN → SELECT TOOLS → EXECUTE → VERIFY → REPORT.
+
+The system must distinguish between:
+
+- Questions.
+- Instructions.
+- Research tasks.
+- Coding tasks.
+- Computer operations.
+- Project management tasks.
+- Long-running missions.
+
+For complex tasks, create an execution plan before starting.
+
+# 5. MULTI-MODEL INTELLIGENCE
+
+Create a model routing system.
+
+The system should choose between local and cloud AI based on:
+
+- Task complexity.
+- Available memory.
+- Model availability.
+- Response speed.
+- Cost.
+- Privacy requirements.
+- User configuration.
+
+Existing local models must be retained:
+
+- qwen2.5-coder:3b
+- qwen3:4b
+
+Suggested model roles:
+
+- Qwen3: general reasoning and conversation.
+- Qwen2.5-Coder: programming assistance.
+- Cloud models: advanced reasoning and complex coding when configured.
+
+Requirements:
+
+- Model availability detection.
+- Connection testing.
+- Model switching.
+- Configurable model preferences.
+- Fallback when a model is unavailable.
+- Clear indication of which model is being used.
+
+Never pretend a model is connected when it is not.
+
+# 6. VOICE INTELLIGENCE
+
+Voice is a core feature, not an optional decoration.
+
+Implement:
+
+## Speech Input
+
+- Speech-to-Text.
+- Microphone selection.
+- Language detection.
+- Uzbek speech recognition where supported.
+- English and Russian recognition.
+- Noise handling where practical.
+
+## Speech Output
+
+- Text-to-Speech.
+- Natural voice.
+- Adjustable speaking speed.
+- Adjustable volume.
+- Language-specific voice configuration.
+- Interruptible speech playback.
+
+## Wake Word
+
+Support:
+
+"Hey JARVIS"
+
+The wake-word engine should run locally when practical.
+
+Provide:
+
+- Enable/disable control.
+- Microphone permission.
+- Wake-word sensitivity.
+- Push-to-talk fallback.
+- Listening indicator.
+
+## Real-Time Conversation
+
+The user must be able to speak naturally.
+
+JARVIS should:
+
+- Recognize speech.
+- Understand context.
+- Respond with voice.
+- Display its response.
+- Allow interruption.
+- Continue the conversation naturally.
+
+Do not require the user to press send after every spoken sentence.
+
+# 7. MEMORY INTELLIGENCE
+
+Build a persistent memory architecture.
+
+Memory categories:
+
+### Short-Term Memory
+Current conversation and active task context.
+
+### Long-Term Memory
+Important user preferences, decisions, and persistent information.
+
+### Project Memory
+Separate knowledge for:
+
+- VERON.
+- ICSN.
+- ENVO.
+- JARVIS.
+
+### Knowledge Base
+Imported documents, project notes, technical documentation, and approved reference materials.
+
+Requirements:
+
+- Persistent storage.
+- Semantic retrieval.
+- Memory search.
+- Memory editing.
+- Memory deletion.
+- Project-specific context.
+- Memory source tracking.
+- Duplicate detection.
+- Confidence and freshness indicators.
+
+Never silently treat uncertain information as verified fact.
+
+Provide a dedicated Memory Center.
+
+# 8. AUTONOMOUS AGENT SYSTEM
+
+Build an extensible multi-agent framework.
+
+Initial specialized agents:
+
+## Research Agent
+Internet research, source collection, verification, and summaries.
+
+## Developer Agent
+Code generation, debugging, refactoring, and software development.
+
+## Analyst Agent
+Business analysis, data analysis, comparisons, and recommendations.
+
+## Planning Agent
+Project plans, priorities, deadlines, and task decomposition.
+
+## Testing Agent
+Automated tests, validation, and quality assurance.
+
+## Security Agent
+Permission validation, security checks, and suspicious-operation detection.
+
+## Document Agent
+PDF, DOCX, XLSX, and PPTX generation and analysis.
+
+## Communication Agent
+Drafting emails, preparing messages, and organizing communication workflows.
+
+## Memory Agent
+Memory storage, retrieval, categorization, and maintenance.
+
+## Supervisor Agent
+Reviews agent outputs, detects inconsistencies, and evaluates final results.
+
+Agent requirements:
+
+- Independent task contexts.
+- Shared controlled knowledge.
+- Task assignment.
+- Progress tracking.
+- Error reporting.
+- Retry policies.
+- Agent communication.
+- Execution logs.
+- Resource management.
+
+Do not launch every agent simultaneously.
+
+Use a resource-aware scheduler suitable for the user's computer.
+
+# 9. DEVELOPER INTELLIGENCE
+
+JARVIS must be capable of acting as a programming assistant.
+
+Supported development areas:
+
+- React.
+- TypeScript.
+- JavaScript.
+- Python.
+- Node.js.
+- HTML/CSS.
+- REST APIs.
+- FastAPI.
+- Supabase.
+- PostgreSQL.
+- Git.
+
+Capabilities:
+
+1. Inspect an existing repository.
+2. Understand project architecture.
+3. Read and analyze source files.
+4. Generate code.
+5. Edit existing code.
+6. Create new files.
+7. Identify bugs.
+8. Suggest fixes.
+9. Run tests.
+10. Analyze test failures.
+11. Refactor code.
+12. Explain changes.
+13. Create documentation.
+14. Monitor build results.
+
+## Developer Studio
+
+Create a dedicated development workspace containing:
+
+- Project explorer.
+- Code preview/editor integration.
+- Terminal panel.
+- AI coding conversation.
+- Task progress.
+- Test results.
+- Error logs.
+- Git status.
+- Change summaries.
+
+Do not pretend to execute terminal commands if execution is unavailable.
+
+For substantial changes:
+
+- Inspect first.
+- Create a backup or checkpoint.
+- Make targeted modifications.
+- Run tests.
+- Verify the result.
+- Explain changed files.
+
+# 10. COMPUTER INTELLIGENCE
+
+Implement controlled Windows automation.
+
+Capabilities:
+
+- Open applications.
+- Close applications.
+- Open folders.
+- Search for files.
+- Read supported files.
+- Create files.
+- Organize folders.
+- Open VS Code.
+- Run approved scripts.
+- Execute terminal commands.
+- Interact with supported applications.
+- Capture screenshots.
+- Analyze screenshots.
+- Monitor system information.
+
+Use appropriate Windows APIs or automation libraries.
+
+Computer operations must be logged.
+
+Do not implement hidden surveillance, credential extraction, unauthorized remote access, or covert data collection.
+
+# 11. CEO INTELLIGENCE
+
+This module is designed specifically for the founder.
+
+JARVIS must understand the user's business and project context.
+
+Initial project workspaces:
+
+- VERON.
+- ICSN.
+- ENVO.
+- JARVIS itself.
+
+Capabilities:
+
+- Business strategy.
+- Project planning.
+- Roadmaps.
+- Market research.
+- Competitor analysis.
+- Grant research.
+- Investor documentation.
+- Financial projections.
+- Business model analysis.
+- Product development planning.
+- Progress tracking.
+- Risk analysis.
+- Weekly reporting.
+
+Create project-specific memory.
+
+Never mix unrelated project data.
+
+JARVIS must distinguish between confirmed project decisions, proposals, and outdated plans.
+
+# 12. INTERNET RESEARCH
+
+Build a research subsystem.
+
+Capabilities:
+
+- Search the web.
+- Open supported pages.
+- Extract relevant information.
+- Compare sources.
+- Identify publication dates.
+- Verify claims.
+- Summarize findings.
+- Generate cited reports.
+
+For time-sensitive information, prioritize recent sources.
+
+Never fabricate sources, URLs, research results, or citations.
+
+If internet access is unavailable, explain the limitation.
+
+# 13. MISSION CONTROL
+
+Build a central task management system.
+
+Each mission must contain:
+
+- Mission ID.
+- Title.
+- Description.
+- Priority.
+- Status.
+- Created date.
+- Start date.
+- Completion date.
+- Assigned agent.
+- Execution steps.
+- Logs.
+- Results.
+- Errors.
+
+Mission statuses:
+
+- Pending.
+- Planning.
+- Running.
+- Waiting for Approval.
+- Completed.
+- Failed.
+- Cancelled.
+
+Provide:
+
+- Active missions.
+- Completed missions.
+- Failed missions.
+- Agent assignments.
+- Progress indicators.
+- Execution history.
+- Search and filters.
+
+The dashboard must update in real time through WebSocket connections.
+
+# 14. SYSTEM MONITORING
+
+Create a live system monitoring module.
+
+Monitor:
+
+- CPU usage.
+- RAM usage.
+- Disk space.
+- Network status.
+- Application status.
+- Backend status.
+- Ollama connection.
+- AI model availability.
+- Active agents.
+- Background tasks.
+
+Display real system measurements, not simulated values.
+
+Use lightweight monitoring appropriate for the hardware.
+
+# 15. DOCUMENT INTELLIGENCE
+
+JARVIS must support:
+
+- PDF reading and generation.
+- Word document creation.
+- Excel spreadsheet processing.
+- PowerPoint presentation creation.
+- Markdown.
+- Text files.
+- CSV files.
+
+Capabilities:
+
+- Summarization.
+- Extraction.
+- Classification.
+- Analysis.
+- Document drafting.
+- Report generation.
+- File organization.
+
+Preserve original files unless the user explicitly authorizes modifications.
+
+# 16. CREATIVE INTELLIGENCE
+
+Create a creative assistance module.
+
+Capabilities:
+
+- UI/UX concepts.
+- Product ideas.
+- Branding concepts.
+- Design specifications.
+- Presentation planning.
+- Marketing copy.
+- Video scripts.
+- Image-generation prompt creation.
+- Product prototyping assistance.
+
+Use separate tools or APIs for actual image and video generation. Never claim that an image or video has been generated if only a prompt was written.
+
+# 17. INTEGRATION CENTER
+
+Create an extensible integration architecture.
+
+Potential integrations:
+
+- Ollama.
+- GitHub.
+- Supabase.
+- Telegram.
+- Email providers.
+- Google Calendar.
+- Browser.
+- Local file system.
+- External AI APIs.
+
+Each integration must have:
+
+- Connection status.
+- Authentication management.
+- Permission configuration.
+- Test connection.
+- Error handling.
+- Disconnect option.
+
+Never expose secrets in frontend code.
+
+# 18. HIGH AUTONOMY AND SECURITY
+
+JARVIS should operate with high autonomy.
+
+It should not ask for confirmation for every harmless operation.
+
+## Autonomous operations
+
+When permitted, JARVIS can independently:
+
+- Search information.
+- Analyze documents.
+- Read project files.
+- Create new files.
+- Draft code.
+- Run approved tests.
+- Generate reports.
+- Create backups.
+- Organize non-sensitive task data.
+- Retry recoverable failed operations.
+
+## Approval-required operations
+
+Require explicit user confirmation before:
+
+- Deleting important files.
+- Overwriting significant existing data.
+- Sending emails or external messages.
+- Spending money.
+- Purchasing services.
+- Deploying production changes.
+- Publishing content.
+- Changing security permissions.
+- Accessing sensitive credentials.
+- Executing destructive commands.
+- Making irreversible changes.
+
+Implement:
+
+- Permission levels.
+- Action logs.
+- Secure secret storage.
+- Session authentication.
+- Local-first privacy.
+- API key protection.
+- Backup and recovery.
+- Emergency stop.
+- Agent cancellation.
+- Resource limits.
+
+Never allow an AI agent to bypass the security system or grant itself additional privileges.
+
+# 19. CINEMATIC DESIGN SYSTEM
+
+This is one of the highest-priority requirements.
+
+The visual experience must be inspired by the futuristic AI interfaces in Iron Man, while maintaining an original design identity.
+
+The interface must look like a sophisticated AI command environment, not a generic SaaS dashboard.
+
+## Visual Identity
+
+Primary background:
+- Deep black.
+- Midnight navy.
+- Dark graphite.
+
+Primary accent:
+- Electric blue.
+
+Secondary accents:
+- Cyan.
+- Ice blue.
+- White.
+
+Design elements:
+
+- Holographic panels.
+- Glassmorphism.
+- Subtle neon borders.
+- Atmospheric lighting.
+- Circular technical visualizations.
+- Dynamic waveforms.
+- Animated AI core.
+- Minimal futuristic typography.
+- Smooth transitions.
+- Layered depth.
+
+Avoid:
+
+- Excessive gradients.
+- Oversized conventional cards.
+- Generic admin templates.
+- Unnecessary decorative elements.
+- Excessive visual clutter.
+- Cartoon-like interfaces.
+
+## Main AI Interface
+
+The main screen must contain:
+
+1. Central animated AI Core.
+2. JARVIS status.
+3. Voice interaction.
+4. Conversation display.
+5. Quick commands.
+6. Active mission indicator.
+7. System status.
+8. Navigation.
+
+The AI Core should visually respond to different states:
+
+- Idle: slow ambient animation.
+- Listening: active waveform and pulse.
+- Thinking: rotating or changing energy patterns.
+- Speaking: synchronized audio visualization where technically possible.
+- Executing: progress animation.
+- Error: clear warning state.
+- Offline: distinct disconnected state.
+
+Use Three.js or another suitable technology for the central visual.
+
+The animation must remain lightweight and must not overload the user's computer.
+
+## Main Navigation
+
+Create the following sections:
+
+- Overview.
+- JARVIS Chat.
+- Mission Control.
+- Developer Studio.
+- Intelligence Center.
+- Memory Center.
+- CEO Workspace.
+- System Monitor.
+- Integration Center.
+- Settings.
+
+All sections must use a consistent visual language.
+
+# 20. WEB INTERFACE
+
+The web companion must provide a responsive version of the JARVIS experience.
+
+Support:
+
+- Desktop browser.
+- Tablet.
+- Mobile browser.
+
+It should connect to the same authenticated backend.
+
+Do not expose unrestricted local computer access through the web interface.
+
+Desktop-specific functions must only be available through an authorized desktop connection.
+
+# 21. DATABASE AND BACKEND
+
+Create a clean modular data architecture.
+
+Suggested entities:
+
+- Users.
+- Sessions.
+- Conversations.
+- Messages.
+- Memories.
+- Projects.
+- Missions.
+- Mission Steps.
+- Agents.
+- Agent Runs.
+- Tool Executions.
+- System Events.
+- Integrations.
+- Permissions.
+- Audit Logs.
+- Documents.
+- Model Configurations.
+
+Requirements:
+
+- Database migrations.
+- Data validation.
+- Error handling.
+- Logging.
+- API documentation.
+- Secure authentication.
+- Backup and restore.
+- Consistent IDs.
+- Timestamps.
+- Data retention controls.
+
+Do not store passwords or API keys as plain text.
+
+# 22. USER EXPERIENCE
+
+The user must always understand what JARVIS is doing.
+
+For every long-running task, display:
+
+- What JARVIS understood.
+- What it plans to do.
+- Which agents are working.
+- Current progress.
+- Whether approval is needed.
+- What has been completed.
+- What failed.
+- Final result.
+
+Provide the ability to:
+
+- Pause a mission.
+- Resume a mission.
+- Cancel a mission.
+- Inspect execution logs.
+- Retry failed steps.
+- Review proposed changes.
+
+The interface must remain responsive during background execution.
+
+# 23. PERFORMANCE OPTIMIZATION
+
+The system must work on the existing computer.
+
+Priorities:
+
+1. Low idle RAM usage.
+2. Efficient local model usage.
+3. Lazy loading of heavy UI components.
+4. Resource-aware agent scheduling.
+5. Avoid unnecessary background processes.
+6. Lightweight animations.
+7. Efficient database queries.
+8. Reuse AI model connections when possible.
+9. Avoid running duplicate tasks.
+10. Graceful recovery after application restart.
+
+Do not assume the system has a powerful GPU.
+
+# 24. DEVELOPMENT METHODOLOGY
+
+Build the system incrementally.
+
+Do not attempt to implement every advanced feature in one enormous code change.
+
+Use the following phases.
+
+## Phase 0 — Audit and Preservation
+- Inspect existing code.
+- Create audit report.
+- Identify architecture.
+- Back up existing project.
+- Establish baseline tests.
+
+## Phase 1 — Foundation
+- Stabilize backend.
+- Implement AI Core.
+- Configure local model integration.
+- Create persistent database.
+- Implement basic chat.
+- Implement configuration management.
+
+## Phase 2 — Cinematic Interface
+- Create the main interface.
+- Implement AI Core visualization.
+- Implement animations.
+- Build navigation.
+- Build responsive layouts.
+
+## Phase 3 — Memory
+- Implement short-term memory.
+- Implement long-term memory.
+- Implement project memory.
+- Implement retrieval and editing.
+
+## Phase 4 — Voice
+- Speech recognition.
+- Speech synthesis.
+- Wake word.
+- Real-time conversation.
+- Audio controls.
+
+## Phase 5 — Mission Control
+- Task management.
+- Background execution.
+- WebSocket updates.
+- Mission history.
+- Execution logs.
+
+## Phase 6 — Developer Intelligence
+- Repository analysis.
+- Code generation.
+- File editing.
+- Terminal integration.
+- Testing.
+- Git integration.
+
+## Phase 7 — Computer Intelligence
+- Windows automation.
+- Application launching.
+- File management.
+- Screenshot analysis.
+- Permission controls.
+
+## Phase 8 — Autonomous Agents
+- Agent framework.
+- Task orchestration.
+- Parallel execution.
+- Supervisor.
+- Error recovery.
+
+## Phase 9 — CEO Intelligence
+- Project workspaces.
+- Business analysis.
+- Roadmaps.
+- Research.
+- Reporting.
+
+## Phase 10 — Advanced Integrations
+- Telegram.
+- Email.
+- Calendar.
+- GitHub.
+- External APIs.
+- Web companion.
+
+## Phase 11 — Final Optimization
+- Security audit.
+- Performance testing.
+- Reliability testing.
+- UI refinement.
+- Documentation.
+- Release preparation.
+
+# 25. QUALITY ASSURANCE
+
+Every implemented feature must be tested.
+
+Testing requirements:
+
+- Unit tests.
+- Integration tests.
+- API tests.
+- UI tests.
+- Database tests.
+- Voice subsystem tests.
+- Agent execution tests.
+- Permission tests.
+- Recovery tests.
+
+Do not mark a feature as complete merely because its interface exists.
+
+A feature is complete only when:
+
+1. Its interface works.
+2. Its backend works.
+3. Its data is persisted when required.
+4. Its errors are handled.
+5. Its permissions are respected.
+6. Its actual behavior has been tested.
+
+# 26. DOCUMENTATION
+
+Maintain the following documentation:
+
+- JARVIS_PROJECT_AUDIT.md
+- JARVIS_ARCHITECTURE.md
+- JARVIS_ROADMAP.md
+- JARVIS_CHANGELOG.md
+- JARVIS_SETUP.md
+- JARVIS_API.md
+- JARVIS_SECURITY.md
+- JARVIS_TEST_REPORT.md
+
+Update documentation when architecture or functionality changes.
+
+# 27. FINAL PRODUCT STANDARD
+
+The final product must deliver the following experience:
+
+The user opens JARVIS.
+
+A cinematic AI Core appears.
+
+JARVIS is ready.
+
+The user says:
+
+"Hey JARVIS, analyze the current state of ENVO, identify the most important unfinished tasks, and prepare a development plan."
+
+JARVIS:
+
+1. Understands the request.
+2. Retrieves ENVO project context.
+3. Inspects available project information.
+4. Assigns suitable agents.
+5. Analyzes the current implementation.
+6. Identifies unfinished tasks.
+7. Prioritizes them.
+8. Creates a development plan.
+9. Presents the results in Mission Control.
+10. Provides a clear report.
+
+Another example:
+
+"JARVIS, build a new feature for ICSN."
+
+JARVIS:
+
+1. Inspects the existing repository.
+2. Understands the existing architecture.
+3. Identifies the relevant components.
+4. Creates an implementation plan.
+5. Makes a safe backup.
+6. Writes the code.
+7. Runs tests.
+8. Reviews the changes.
+9. Reports the results.
+
+The user should not have to manage every technical step manually.
+
+JARVIS should act as an intelligent operational partner.
+
+# 28. FINAL INSTRUCTIONS TO THE DEVELOPMENT AGENT
+
+Follow these instructions strictly:
+
+- Preserve the existing JARVIS project.
+- Inspect before modifying.
+- Prioritize functionality over visual appearance alone.
+- Prioritize performance on the existing hardware.
+- Maintain modular architecture.
+- Avoid unnecessary dependencies.
+- Do not create fake features.
+- Do not silently remove existing functionality.
+- Do not expose secrets.
+- Implement real error handling.
+- Test every major implementation.
+- Keep the user informed.
+- Document important changes.
+
+When you encounter an architectural decision, choose the least destructive solution that maintains compatibility and long-term extensibility.
+
+If a feature cannot currently be implemented, explain why and provide a practical implementation path instead of creating a fake interface.
+
+## FIRST EXECUTION INSTRUCTION
+
+DO NOT immediately start rebuilding or rewriting the project.
+
+Your first task is:
+
+1. Inspect `C:\Users\acer\jarvis-project\jarvis-kernel`.
+2. Understand the existing codebase.
+3. Identify all existing working features.
+4. Create a complete technical audit.
+5. Propose the safest implementation roadmap.
+6. Identify any dependencies or architectural changes required.
+7. Present the audit and roadmap before major modifications.
+
+After the audit, proceed incrementally, preserving the existing project and verifying each implementation phase.
+
+---
+
+# PROJECT VISION
+
+**J.A.R.V.I.S. — Your Personal Artificial Intelligence.**
+
+Not just a chatbot.
+
+Not just a voice assistant.
+
+Not just a coding tool.
+
+A unified, intelligent, extensible personal AI operating system capable of understanding, planning, researching, developing, coordinating, and executing complex tasks.
+
+**ONE CORE. MULTIPLE INTELLIGENCES. COMPLETE CONTROL.**

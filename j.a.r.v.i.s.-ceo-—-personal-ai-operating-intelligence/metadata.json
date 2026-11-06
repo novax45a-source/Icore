@@ -1,0 +1,10 @@
+{
+  "name": "J.A.R.V.I.S. CEO — Personal AI Operating Intelligence",
+  "description": "Futuristic holographic AI Operating System & Founder Companion with multi-agent orchestration, voice intelligence, project memory, and multi-model routing.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

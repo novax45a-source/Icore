@@ -1,0 +1,1506 @@
+
+# ICSN — INTERNATIONAL CAREER & STUDY NAVIGATOR
+## COMPLETE PRODUCT DEVELOPMENT, DESIGN, AI, SECURITY & PRODUCTION MASTER PROMPT
+
+### 1. YOUR ROLE AND MISSION
+
+Act as a senior product architect, full-stack engineer, AI engineer, UI/UX designer, database architect, security specialist and product strategist.
+
+You are responsible for developing my existing project:
+
+**ICSN — International Career & Study Navigator.**
+
+Your mission is to transform the existing project into a complete, functional, reliable and production-ready global education and career platform.
+
+ICSN is not just a university search website.
+
+It is an AI-powered platform that helps students:
+
+- Discover their interests and suitable academic fields.
+- Explore international education opportunities.
+- Find universities and scholarships.
+- Understand admission requirements.
+- Prepare their applications.
+- Build professional portfolios.
+- Discover internships and career opportunities.
+- Connect with startups, organizations and potential collaborators.
+- Plan their academic and professional future.
+
+The platform must be student-first, globally accessible and designed for long-term growth.
+
+**IMPORTANT: This is an existing project. Preserve the existing codebase, working functionality, database structures and Supabase integrations. Do not rebuild everything from scratch unless a specific component is demonstrably unusable.**
+
+First inspect the project, then improve and complete it.
+
+Do not create a beautiful static demo and call it a finished product. Implement real functionality and connect it to the backend.
+
+---
+
+# 2. PRODUCT VISION AND POSITIONING
+
+Official name:
+
+**ICSN — International Career & Study Navigator**
+
+Core positioning:
+
+**Your Future. Your Opportunities. Your Path.**
+
+Mission:
+
+Make quality education guidance, international opportunities and career development accessible to students regardless of their financial background or location.
+
+Core principles:
+
+1. Student-first.
+2. Free access to core student tools.
+3. AI-powered personalization.
+4. Global opportunity discovery.
+5. Transparent recommendations.
+6. Privacy and student safety.
+7. Equal access to information.
+8. Practical outcomes rather than empty promises.
+
+ICSN should become a platform where a student can manage their entire education and early-career journey in one place.
+
+---
+
+# 3. PROJECT AUDIT AND PRESERVATION
+
+Before implementation, inspect the entire existing project.
+
+Review:
+
+- Existing frontend.
+- Existing backend.
+- React components and routing.
+- Supabase integration.
+- Authentication.
+- Database schema.
+- Existing AI integrations.
+- University matching functionality.
+- Scholarship functionality.
+- Student profiles.
+- Portfolio functionality.
+- Existing dashboards.
+- APIs and Edge Functions.
+- Existing design system.
+- Mobile responsiveness.
+- Existing errors and unfinished features.
+
+Identify:
+
+- What works.
+- What is broken.
+- What is incomplete.
+- What is duplicated.
+- What is insecure.
+- What needs improvement.
+
+Create a safe Git checkpoint or backup before major modifications.
+
+Preserve existing working functionality.
+
+Do not reset the database, delete migration history, remove important integrations or overwrite existing user data.
+
+If a feature is incomplete, repair and complete it instead of silently removing it.
+
+After the initial audit, begin implementation rather than stopping at the report.
+
+---
+
+# 4. USER TYPES AND ACCOUNT ARCHITECTURE
+
+ICSN is a student-first platform with several types of users.
+
+## 4.1 Student
+
+Student is the primary user.
+
+A normal public registration must create a Student account by default.
+
+Students can access the complete free student experience.
+
+## 4.2 Partner Organizations
+
+Support verified institutional accounts for:
+
+- Schools.
+- Education centers.
+- Scholarship providers.
+- Employers and recruiters.
+- Universities and education organizations.
+- Volunteer organizations.
+- Startup and innovation organizations.
+
+Organizations must apply for verification before publishing official opportunities or accessing protected partner features.
+
+## 4.3 Admin
+
+Admin has access to platform management.
+
+Admin accounts must be privately provisioned.
+
+No public Admin registration.
+
+## 4.4 Authentication and access control
+
+Use secure authentication and backend-controlled permissions.
+
+Never allow users to grant themselves administrative or partner privileges by changing frontend state.
+
+Use Supabase authentication and RLS where applicable.
+
+Protect organization data and student information.
+
+The normal student experience must not be confused with administrative or partner dashboards.
+
+Include secure Google authentication where supported.
+
+A Google account must map consistently to its own authenticated identity.
+
+Existing user roles must not change simply because a user logs in again.
+
+---
+
+# 5. STUDENT REGISTRATION AND ONBOARDING
+
+Create a premium student registration experience.
+
+Collect only the information necessary for the platform.
+
+Suggested fields:
+
+- First name.
+- Last name.
+- Email.
+- Country.
+- City or region.
+- Date of birth or appropriate age information.
+- Current education level.
+- Current grade or academic year.
+- School or university, optional.
+- Preferred platform language.
+- Areas of academic interest.
+- Initial education and career goals.
+
+Support email verification, Google authentication, secure passwords and password recovery.
+
+After registration:
+
+1. Create or retrieve the authenticated user.
+2. Create the student profile if it does not exist.
+3. Start onboarding.
+4. Let the student complete their academic profile.
+5. Offer the 30-question assessment.
+6. Open the personalized Student Dashboard.
+
+Do not force every student to complete every optional field before using the platform.
+
+For students under 18, implement age-appropriate privacy, guardian consent where legally required and protective defaults.
+
+Student date of birth, private contact details and sensitive profile information must never become public by default.
+
+---
+
+# 6. MAIN STUDENT DASHBOARD
+
+Create a complete personalized dashboard.
+
+The dashboard must show useful information rather than decorative or fake statistics.
+
+Main sections:
+
+- Overview.
+- My AI Assistant.
+- Career & Major Discovery.
+- University Matching.
+- Scholarships.
+- Application Tracker.
+- Portfolio Builder.
+- Opportunities.
+- Internships.
+- Remote Work.
+- Volunteering.
+- Startup Network.
+- Events.
+- My Progress.
+- Notifications.
+- Profile and Settings.
+
+Dashboard personalization should depend on the student's academic interests, goals, preferences and completed activities.
+
+Include:
+
+- Recommended next steps.
+- Upcoming deadlines.
+- Saved universities.
+- Saved scholarships.
+- Application progress.
+- Portfolio completion guidance.
+- Relevant opportunities.
+
+Never invent activity or achievements to fill empty dashboard areas.
+
+Use professional empty states when the student has not added information yet.
+
+---
+
+# 7. AI ASSISTANT — CORE PLATFORM FEATURE
+
+AI must be one of the central features of ICSN.
+
+Every student must be able to use the core AI assistant free of charge.
+
+The assistant should be useful as a personal education and career navigator.
+
+## 7.1 AI capabilities
+
+The AI Assistant should help students:
+
+- Explore academic interests.
+- Discover suitable majors.
+- Understand different careers.
+- Compare education pathways.
+- Find suitable universities.
+- Understand admission requirements.
+- Discover scholarship opportunities.
+- Identify missing application documents.
+- Build application checklists.
+- Improve portfolios.
+- Prepare academic plans.
+- Explore internships.
+- Understand remote-work opportunities.
+- Explore startup opportunities.
+- Prepare for interviews.
+- Develop career skills.
+- Identify knowledge gaps.
+- Plan achievable next steps.
+
+## 7.2 Personalized AI
+
+The assistant may use the student's saved academic profile and preferences when relevant.
+
+Students must be able to control their profile information and AI personalization.
+
+The assistant must not expose private student data to other users.
+
+## 7.3 AI languages
+
+Support:
+
+- English.
+- Uzbek.
+- Russian.
+
+Create an architecture that can be extended to additional languages.
+
+The assistant should respond in the student's preferred language.
+
+## 7.4 AI quality and accuracy
+
+The AI must:
+
+- Distinguish verified facts from suggestions.
+- Explain why it recommends something.
+- Cite available reliable sources.
+- Show source dates where relevant.
+- Avoid invented universities, scholarships, requirements or deadlines.
+- Communicate uncertainty.
+- Avoid guaranteeing admission, scholarships, employment or visas.
+- Encourage users to verify critical requirements with official institutions.
+
+For visa and legal questions, provide informational guidance and official sources rather than pretending to provide professional legal advice.
+
+## 7.5 Free student access
+
+Core AI functionality must remain free for students.
+
+Do not introduce a paid student subscription as the default business model.
+
+Use secure server-side AI integrations.
+
+Keep provider API keys on the backend.
+
+Apply reasonable abuse prevention and infrastructure protection without silently turning the core student experience into a paid product.
+
+If an AI provider is not configured, show a clear setup or temporary-unavailable state rather than fake AI responses.
+
+---
+
+# 8. 30-QUESTION CAREER AND EDUCATION DISCOVERY TEST
+
+This is one of ICSN's most important features.
+
+Implement a complete 30-question assessment.
+
+The previous assessment idea evolved from 20 to 30 questions. The final version must contain 30 questions.
+
+Its purpose is to help students discover:
+
+- Suitable academic fields.
+- Potential majors.
+- Career directions.
+- Preferred learning environments.
+- Education destinations.
+- Areas requiring further development.
+
+## 8.1 Assessment structure
+
+Create 30 meaningful questions distributed across these areas:
+
+1. Interests and personal preferences.
+2. Academic subjects and strengths.
+3. Problem-solving and working styles.
+4. Preferred career environments.
+5. Long-term professional goals.
+6. Learning preferences.
+7. Country and study destination preferences.
+8. Language readiness.
+9. Academic preparation.
+10. Financial and scholarship needs.
+11. Education priorities.
+12. Career and lifestyle preferences.
+
+Do not ask 30 nearly identical questions.
+
+Use a mix of appropriate multiple-choice, preference-scale and short-answer questions.
+
+Allow students to save their progress and continue later.
+
+## 8.2 Assessment results
+
+After completion, provide:
+
+- Recommended academic fields.
+- Recommended majors.
+- Possible career directions.
+- Explanation of each recommendation.
+- Relevant skills to develop.
+- Suggested learning activities.
+- Potential study destinations.
+- Suggested next steps.
+
+Show how answers influenced recommendations.
+
+Do not present the result as a psychological diagnosis or an irreversible career decision.
+
+Students can retake the assessment when their interests change.
+
+Results must be private to the student.
+
+---
+
+# 9. CAREER AND MAJOR DISCOVERY
+
+Create an interactive academic and career exploration module.
+
+Students should be able to explore:
+
+- Academic disciplines.
+- University majors.
+- Career pathways.
+- Required skills.
+- Relevant school subjects.
+- Typical degree paths.
+- Possible employment sectors.
+- Further education options.
+- Related internship and project opportunities.
+
+For each field, provide:
+
+- Clear explanation.
+- Common responsibilities.
+- Useful skills.
+- Relevant subjects.
+- Possible majors.
+- Career opportunities.
+- Related educational pathways.
+
+Connect this module to AI recommendations and the student's 30-question assessment.
+
+Do not claim that one major guarantees a specific salary or job.
+
+---
+
+# 10. UNIVERSITY MATCHING SYSTEM
+
+Create an intelligent university matching engine.
+
+The matching engine must not simply list popular universities.
+
+It must evaluate how well an educational opportunity fits the student's actual profile.
+
+## 10.1 Matching factors
+
+Consider:
+
+1. Preferred country.
+2. Academic field.
+3. Selected major.
+4. Academic performance.
+5. Admission requirements.
+6. Required documents.
+7. Missing qualifications.
+8. Language requirements.
+9. Scholarship availability.
+10. Tuition and other costs.
+11. Financial aid possibilities.
+12. Visa requirements.
+13. Graduate outcomes where reliable data exists.
+14. Housing availability and cost.
+15. Transport and accessibility.
+16. Safety information.
+17. Halal or other dietary preferences when requested.
+18. Student lifestyle preferences.
+
+## 10.2 University recommendations
+
+For every recommendation, provide:
+
+- University name.
+- Country.
+- Relevant academic program.
+- Admission requirements.
+- Language requirements.
+- Estimated tuition.
+- Available scholarships.
+- Application deadlines.
+- Required documents.
+- Missing requirements based on the student's profile.
+- Official website.
+- Source and last verification date.
+- Explanation of why the university matches.
+
+## 10.3 Matching categories
+
+Use understandable categories such as:
+
+- Strong Profile Match.
+- Good Match.
+- Potential Match.
+- Requires Further Preparation.
+
+Do not claim that a matching percentage is an admission probability.
+
+If a numerical fit indicator is shown, explain how it is calculated and which information is missing.
+
+Never invent university data.
+
+Use official university and government sources wherever possible.
+
+## 10.4 University detail experience
+
+Provide useful university and program pages.
+
+However, do not make the entire V1 revolve around large static university profiles.
+
+Prioritize personalized matching and the Portfolio Builder as central student experiences.
+
+---
+
+# 11. SCHOLARSHIP AND GRANT DISCOVERY
+
+Create a complete scholarship discovery system.
+
+Students must be able to search and filter:
+
+- Country.
+- Academic field.
+- Degree level.
+- Funding type.
+- Full or partial funding.
+- Eligibility.
+- Nationality restrictions.
+- Language requirements.
+- Application deadline.
+- Required documents.
+
+Each scholarship record should include:
+
+- Official name.
+- Provider.
+- Country.
+- Eligibility.
+- Funding details.
+- Application process.
+- Required documents.
+- Official application link.
+- Deadline.
+- Verification status.
+- Last checked date.
+
+Allow students to:
+
+- Save scholarships.
+- Compare opportunities.
+- Track application progress.
+- Add deadlines to their calendar.
+- Maintain document checklists.
+- Receive deadline reminders.
+
+Do not invent scholarship availability, funding amounts or application deadlines.
+
+When current verified data is unavailable, clearly label the information as unverified or awaiting confirmation.
+
+---
+
+# 12. APPLICATION TRACKER
+
+Build an application management system.
+
+Students must be able to manage university and scholarship applications.
+
+Features:
+
+- Add application.
+- Select university or scholarship.
+- Record deadlines.
+- Store application status.
+- Create required-document checklists.
+- Track missing documents.
+- Add private notes.
+- Upload relevant documents securely.
+- Record submission dates.
+- Track interview dates.
+- Track results.
+- Receive reminders.
+
+Suggested statuses:
+
+- Researching.
+- Preparing.
+- Ready to Apply.
+- Submitted.
+- Under Review.
+- Interview.
+- Accepted.
+- Rejected.
+- Waitlisted.
+- Withdrawn.
+
+Allow custom statuses where appropriate.
+
+Documents must be stored securely and accessible only to authorized users.
+
+Do not submit external applications automatically without explicit user authorization.
+
+---
+
+# 13. PORTFOLIO BUILDER — PRIORITY V1 FEATURE
+
+Portfolio Builder is a major priority for the first public version.
+
+It should be one of the strongest and most polished features in ICSN.
+
+Students must be able to create a professional academic and career portfolio.
+
+## 13.1 Portfolio sections
+
+Support:
+
+- Personal introduction.
+- Education.
+- Academic interests.
+- Skills.
+- Projects.
+- Certificates.
+- Achievements.
+- Competitions.
+- Volunteering.
+- Internships.
+- Work experience.
+- Research.
+- Publications.
+- Events.
+- Startup participation.
+- Leadership experience.
+- Languages.
+- External profile links.
+
+## 13.2 Portfolio functionality
+
+Students can:
+
+- Add and edit entries.
+- Upload supporting documents.
+- Add images and links where appropriate.
+- Organize sections.
+- Preview the portfolio.
+- Choose a professional layout.
+- Generate a shareable portfolio link.
+- Export a portfolio as PDF where supported.
+- Keep the portfolio private or make selected sections public.
+
+Create polished portfolio templates.
+
+## 13.3 Privacy
+
+The portfolio must be private by default.
+
+Students control what information is shared.
+
+For minors, use additional protective defaults.
+
+Never expose private contact information, date of birth, home address or sensitive documents in public portfolios.
+
+## 13.4 AI Portfolio Assistant
+
+AI should help students:
+
+- Improve project descriptions.
+- Organize achievements.
+- Explain skills.
+- Create professional summaries.
+- Identify missing portfolio areas.
+- Suggest suitable projects.
+- Improve clarity and grammar.
+
+AI must not fabricate achievements, certificates, employment history or skills.
+
+---
+
+# 14. INTERNSHIPS, REMOTE WORK AND CAREER OPPORTUNITIES
+
+Build a centralized opportunity discovery module.
+
+Include:
+
+- Internships.
+- Entry-level opportunities.
+- Remote work.
+- Volunteering.
+- Competitions.
+- Research opportunities.
+- Student programs.
+- Startup opportunities.
+- Professional development programs.
+
+Each opportunity should have:
+
+- Organization.
+- Title.
+- Description.
+- Location.
+- Remote or in-person status.
+- Eligibility.
+- Required skills.
+- Deadline.
+- Official application link.
+- Verification status.
+- Last updated date.
+
+Students must be able to save and track opportunities.
+
+Do not publish fictional openings as real opportunities.
+
+External organizations must be verified before presenting their listings as official partner opportunities.
+
+---
+
+# 15. STARTUP AND COLLABORATION NETWORK
+
+ICSN should help students participate in innovation and startup activities.
+
+Implement:
+
+- Discover student projects.
+- Explore startup teams.
+- Find potential co-founders or collaborators.
+- Publish project ideas.
+- Discover competitions and hackathons.
+- Find volunteer organizations.
+- Join appropriate student events.
+- Build project teams.
+- Share selected portfolio information.
+
+Allow students to express interests such as:
+
+- Technology.
+- AI.
+- Business.
+- Design.
+- Research.
+- Marketing.
+- Engineering.
+- Social impact.
+- Entrepreneurship.
+
+Implement safe communication and moderation.
+
+No private student contact details should be exposed by default.
+
+For under-18 users, implement suitable safety restrictions and supervised interaction rules where appropriate.
+
+Do not automatically share student profiles or data with external startups.
+
+---
+
+# 16. EVENTS AND VOLUNTEERING
+
+Build an events and volunteer opportunities module.
+
+Support:
+
+- Educational events.
+- Workshops.
+- Competitions.
+- Conferences.
+- Startup events.
+- Hackathons.
+- Volunteer programs.
+- Student communities.
+
+Students can:
+
+- Discover events.
+- Filter by location and subject.
+- Save events.
+- Register where supported.
+- Track attendance and participation.
+- Add verified participation to their portfolio.
+
+Only verified completion should be represented as a confirmed achievement.
+
+---
+
+# 17. TALENT INDEX AND STUDENT DEVELOPMENT
+
+Implement the agreed Talent Index philosophy.
+
+The Talent Index is a development-oriented feature, not a public competition.
+
+It should help students understand:
+
+- Skill development.
+- Academic preparation.
+- Project experience.
+- Portfolio growth.
+- Leadership activities.
+- Participation.
+- Career readiness.
+
+**STRICT RULE: Do not create a public numerical ranking of students.**
+
+Students should see their own development indicators and improvement suggestions.
+
+Do not publish a leaderboard ranking individual students by a single score.
+
+Verified partner organizations may discover relevant candidates only through controlled, consent-based matching.
+
+A student must be able to control whether their selected profile information can be shared.
+
+No automatic transfer of private student data to employers.
+
+---
+
+# 18. PARTNER AND REVENUE MODEL
+
+Core student features must remain free.
+
+ICSN should generate revenue through institutional and professional partnerships.
+
+Primary revenue channels:
+
+## 18.1 Schools and Education Centers
+
+- Institutional subscriptions or contracts.
+- Student guidance programs.
+- Portfolio and career-readiness tools.
+- Institutional dashboards.
+- Reporting and analytics.
+
+## 18.2 Scholarship and Education Providers
+
+- Verified opportunity partnerships.
+- Institutional visibility packages where appropriate.
+- Recruitment and student engagement partnerships.
+- Institutional services.
+
+## 18.3 Employers and Recruiters
+
+- Recruitment partnerships.
+- Talent discovery contracts.
+- Candidate matching.
+- Internship and entry-level hiring services.
+
+Students must never have to pay simply to access their basic education opportunities.
+
+Do not sell private student data.
+
+Do not imply a partnership exists unless it has been verified and formally established.
+
+The platform must function even before any institutional partnerships have been signed.
+
+---
+
+# 19. PARTNER DASHBOARDS
+
+Create separate verified organization dashboards.
+
+## School / Education Center Dashboard
+
+- Organization profile.
+- Student participation.
+- Education guidance activities.
+- Portfolio development where authorized.
+- Institutional reports.
+- Staff management.
+- Subscription or partnership information.
+
+## Scholarship Provider Dashboard
+
+- Organization profile.
+- Scholarship listings.
+- Application information where authorized.
+- Student engagement statistics.
+- Listing management.
+- Verification status.
+
+## Employer Dashboard
+
+- Company profile.
+- Internship listings.
+- Entry-level jobs.
+- Candidate discovery where consent is granted.
+- Relevant skill filters.
+- Recruitment workflow.
+- Saved candidates.
+- Application management.
+
+## Volunteer and Startup Organization Dashboard
+
+- Organization profile.
+- Events.
+- Volunteer opportunities.
+- Startup programs.
+- Team opportunities.
+- Applications.
+
+All organizations require appropriate verification and permissions.
+
+One organization must never access another organization's private information.
+
+---
+
+# 20. ADMIN CONTROL CENTER
+
+Create a secure Admin Dashboard.
+
+Features:
+
+- Platform overview.
+- User management.
+- Student account management.
+- Organization verification.
+- Partner management.
+- University and program data management.
+- Scholarship database management.
+- Opportunity verification.
+- Events management.
+- Report management.
+- Moderation.
+- AI configuration.
+- Content management.
+- Analytics.
+- Security logs.
+- Privacy and consent audit.
+- System settings.
+
+Admin must have controls for reviewing unverified or outdated information.
+
+All privileged operations must be authorized and auditable.
+
+No public Admin registration.
+
+---
+
+# 21. OFFICIAL ICSN DESIGN SYSTEM
+
+Create a premium design identity for ICSN.
+
+It must be slightly different from ENVO while maintaining a compatible quality standard.
+
+**ENVO is focused on lessons, teachers and learning delivery. ICSN is focused on global opportunities, future pathways, AI and professional growth.**
+
+ICSN should feel like a premium international technology and education product.
+
+## 21.1 Brand identity
+
+Official name:
+
+ICSN — International Career & Study Navigator.
+
+Brand personality:
+
+- Intelligent.
+- Ambitious.
+- Modern.
+- Global.
+- Trustworthy.
+- Innovative.
+- Student-focused.
+
+Primary design direction:
+
+**Modern Dark — Premium Global Experience.**
+
+Use the existing official ICSN logo if available.
+
+The established brand direction uses purple, blue and white.
+
+Do not replace an existing approved logo.
+
+If the original logo asset cannot be found, keep a replaceable logo component and use clean ICSN text branding until the official asset is available.
+
+## 21.2 Color palette
+
+Build the design around:
+
+- Deep Midnight: #0B1020.
+- Dark Indigo: #11152A.
+- Primary Purple: #8257FF.
+- Electric Blue: #386BFF.
+- Light Purple: #A78BFA.
+- Soft White: #F8FAFC.
+- Muted Slate: #94A3B8.
+
+Use these as the core palette and centralize them into design tokens.
+
+Do not use every accent color at the same intensity.
+
+Purple should be a recognizable brand accent; blue should support actions, interactive elements and highlights.
+
+## 21.3 Difference from ENVO
+
+ENVO uses a stronger electric-blue, dark-navy education dashboard aesthetic.
+
+ICSN must be more global, innovative and opportunity-focused.
+
+Use:
+
+- Purple-to-blue accents in carefully selected areas.
+- More spacious layouts.
+- Elegant information cards.
+- Refined visualizations.
+- Subtle futuristic geometric patterns.
+- Sophisticated charts.
+- Attractive portfolio layouts.
+- Modern opportunity discovery cards.
+
+Do not simply copy ENVO's interface.
+
+## 21.4 Dark Mode
+
+Dark Mode should be the primary experience.
+
+Use deep midnight and indigo backgrounds with carefully differentiated surfaces.
+
+Avoid flat black screens.
+
+Use subtle borders, clear hierarchy, readable typography and restrained illumination.
+
+## 21.5 Light Mode
+
+Implement a complete Light Mode as well.
+
+Use white and soft-white surfaces with deep indigo text and controlled purple-blue accents.
+
+Remember the user's theme preference.
+
+Both modes must receive equal design attention.
+
+## 21.6 Typography
+
+Use Inter or a similarly professional modern sans-serif font.
+
+Use a consistent typography scale.
+
+Headings must feel confident but not oversized.
+
+Body text must be highly readable.
+
+## 21.7 Components and geometry
+
+Create a unified design system for:
+
+- Cards.
+- Buttons.
+- Forms.
+- Inputs.
+- Search.
+- Filters.
+- Navigation.
+- Sidebars.
+- Modals.
+- Tables.
+- Charts.
+- Badges.
+- Notifications.
+- Profile cards.
+- Portfolio sections.
+
+Use carefully balanced shapes and spacing.
+
+Avoid excessive rounded corners, random decorative shapes, crowded screens and unnecessary gradients.
+
+## 21.8 Landing page
+
+Create a strong public landing page.
+
+The first screen should communicate:
+
+- What ICSN is.
+- How it helps students.
+- Why it is different.
+- That core student features are free.
+- How to start.
+
+Include:
+- Hero section.
+- AI education guidance introduction.
+- University and scholarship discovery.
+- Portfolio Builder.
+- Career opportunities.
+- Student benefits.
+- Institutional partnership section.
+- Clear call-to-action.
+- Footer with policies and contact details.
+
+Do not use fabricated statistics, testimonials or partner logos.
+
+Use elegant visual illustrations and actual product previews.
+
+## 21.9 User interface quality
+
+Pay particular attention to:
+
+- Dashboard composition.
+- Card proportions.
+- Input field shapes.
+- Button sizes.
+- Icon consistency.
+- Empty states.
+- Search experiences.
+- Filtering panels.
+- Responsive navigation.
+- Portfolio presentation.
+- Charts and progress indicators.
+
+Every screen must feel professionally designed and connected to the same design system.
+
+---
+
+# 22. MOBILE-FIRST AND RESPONSIVE EXPERIENCE
+
+Students must be able to use ICSN comfortably on mobile.
+
+Do not simply shrink desktop layouts.
+
+Create appropriate responsive interfaces for:
+
+- Landing page.
+- Student dashboard.
+- AI assistant.
+- University discovery.
+- Scholarships.
+- Application tracker.
+- Portfolio Builder.
+- Opportunities.
+- Events.
+- Settings.
+
+Support desktop, laptop, tablet and mobile.
+
+Prevent overlapping text, horizontal overflow, broken cards and inaccessible controls.
+
+---
+
+# 23. SEARCH, FILTERS AND SAVED CONTENT
+
+Create a consistent discovery experience.
+
+Students should be able to search and filter:
+
+- Universities.
+- Academic programs.
+- Scholarships.
+- Opportunities.
+- Events.
+- Internships.
+- Organizations.
+- Startup programs.
+
+Support saved items and relevant recommendations.
+
+Use real backend data and indexed queries.
+
+Provide useful empty states and clear filters.
+
+---
+
+# 24. NOTIFICATIONS AND DEADLINE MANAGEMENT
+
+Create a complete notification center.
+
+Support:
+
+- Scholarship deadlines.
+- University application deadlines.
+- Missing document reminders.
+- Saved opportunity updates.
+- Upcoming events.
+- Application status changes.
+- Portfolio suggestions.
+- Important account security messages.
+
+Students must control appropriate notification preferences.
+
+Show real notification status.
+
+Do not pretend that an email or push notification has been sent if the delivery integration is unavailable.
+
+---
+
+# 25. DATABASE AND BACKEND ARCHITECTURE
+
+Review and improve the current Supabase architecture.
+
+Create a coherent data model for:
+
+- Authenticated users.
+- Student profiles.
+- Organizations.
+- Organization members.
+- Roles and permissions.
+- Academic interests.
+- Assessment questions.
+- Assessment responses.
+- Assessment results.
+- Career fields.
+- University records.
+- Academic programs.
+- Scholarships.
+- Applications.
+- Application documents.
+- Portfolios.
+- Portfolio items.
+- Opportunities.
+- Events.
+- Startup projects.
+- Collaborations.
+- Saved items.
+- Notifications.
+- AI conversation history where enabled.
+- Privacy settings.
+- Data-sharing permissions.
+- Audit logs.
+
+Avoid duplicate data structures.
+
+Use proper relationships, indexes and constraints.
+
+All private data must have appropriate RLS policies.
+
+Use backend authorization for privileged operations.
+
+Do not expose service-role keys or private API credentials.
+
+---
+
+# 26. PRIVACY, SAFETY AND STUDENT PROTECTION
+
+Student privacy is a core product requirement.
+
+Implement:
+
+- Private profiles by default.
+- Secure document storage.
+- Consent-based sharing.
+- Organization-level access controls.
+- Account deletion or appropriate account closure workflows.
+- Data export where supported.
+- Privacy controls.
+- Secure communication.
+- Moderation and reporting.
+- Age-appropriate protections for minors.
+- Guardian consent where required.
+- Minimal collection of personal data.
+
+Never expose private contact details, identity documents, home addresses or confidential academic records publicly.
+
+Never provide employers or organizations with unrestricted access to student information.
+
+Students must know what information they are sharing and with whom.
+
+---
+
+# 27. AI AND DATA INTEGRATION QUALITY
+
+All external data and AI connections must be handled responsibly.
+
+Use official sources whenever possible.
+
+For university admissions, scholarships, visas and deadlines:
+
+- Store the source.
+- Store the date last checked.
+- Support verification status.
+- Flag outdated information.
+- Provide official links.
+- Avoid fabricated facts.
+
+Use real integrations where available.
+
+If an API is unavailable, provide a transparent fallback rather than simulating real information.
+
+Do not expose API keys.
+
+Create a scalable AI provider architecture so models can be changed without redesigning the entire application.
+
+---
+
+# 28. PERFORMANCE, ACCESSIBILITY AND CODE QUALITY
+
+Improve:
+
+- Loading speed.
+- Database queries.
+- Image optimization.
+- Component reuse.
+- Search performance.
+- Form validation.
+- Mobile rendering.
+- Error handling.
+- Accessibility.
+- Keyboard navigation.
+- Color contrast.
+- Semantic structure.
+
+Use clean and maintainable code.
+
+Do not introduce unnecessary dependencies.
+
+Do not leave dead buttons, fake loading animations or nonfunctional menu items.
+
+Every visible interactive element must have a real, defined behavior.
+
+---
+
+# 29. IMPLEMENTATION ORDER
+
+Execute the work in controlled stages.
+
+### Phase 1 — Audit and preservation
+Inspect the existing codebase, database and functionality. Create a safe checkpoint.
+
+### Phase 2 — Foundation
+Repair authentication, student profiles, routing, role security and database foundations.
+
+### Phase 3 — Core student experience
+Complete student onboarding, dashboard and account settings.
+
+### Phase 4 — 30-question assessment
+Implement the assessment, scoring logic, explanations and personalized results.
+
+### Phase 5 — AI Assistant
+Implement secure, contextual and multilingual AI functionality.
+
+### Phase 6 — Portfolio Builder
+Build the complete portfolio system. Treat this as a major V1 priority.
+
+### Phase 7 — University and career matching
+Complete field discovery, university matching and recommendation explanations.
+
+### Phase 8 — Scholarships and applications
+Complete scholarship discovery, saved items, deadline tracking and application management.
+
+### Phase 9 — Opportunities and communities
+Implement internships, remote work, volunteering, events and startup collaboration.
+
+### Phase 10 — Partner and Admin systems
+Implement organization verification, partner dashboards and Admin controls.
+
+### Phase 11 — Complete design system
+Apply the official ICSN premium visual identity throughout the platform.
+
+### Phase 12 — Mobile and accessibility
+Complete responsive behavior and accessibility checks.
+
+### Phase 13 — Security and quality testing
+Test authentication, RLS, permissions, privacy, data integrity and all primary workflows.
+
+### Phase 14 — Production preparation
+Prepare deployment, backups, monitoring, legal pages, error handling and release checks.
+
+Do not skip critical backend work to make visual progress.
+
+---
+
+# 30. TESTING AND ACCEPTANCE CRITERIA
+
+Before declaring ICSN complete, verify all major user journeys.
+
+## Student testing
+
+- Register with email.
+- Register with Google.
+- Log in and log out.
+- Recover password.
+- Complete onboarding.
+- Save profile changes.
+- Complete all 30 assessment questions.
+- View personalized results.
+- Use the AI Assistant.
+- Explore career fields.
+- Search universities.
+- Compare university options.
+- Discover scholarships.
+- Save scholarships.
+- Track applications.
+- Upload portfolio items.
+- Preview and share selected portfolio sections.
+- Discover opportunities.
+- Save events.
+- Change privacy settings.
+- Access the platform on mobile.
+
+## Partner testing
+
+- Submit an organization application.
+- Remain pending before verification.
+- Access authorized dashboard after approval.
+- Publish eligible opportunities.
+- Manage organization information.
+- View only authorized data.
+
+## Admin testing
+
+- Manage users.
+- Verify organizations.
+- Review reported content.
+- Manage academic and scholarship information.
+- Review system activity.
+- Access audit logs.
+
+## Security testing
+
+- Direct URL access.
+- Role manipulation.
+- Unauthorized database reads.
+- Unauthorized organization access.
+- Student data leakage.
+- Private document access.
+- OAuth identity handling.
+- Consent verification.
+- Account deletion and access revocation.
+- RLS testing.
+
+## Quality testing
+
+- Dark Mode.
+- Light Mode.
+- Desktop.
+- Tablet.
+- Mobile.
+- All major forms.
+- Search and filters.
+- Empty states.
+- Error states.
+- Loading states.
+- Real backend integration.
+
+Do not mark a feature complete unless it has been tested.
+
+---
+
+# 31. PRODUCTION LAUNCH REQUIREMENTS
+
+Prepare the platform for a real public launch.
+
+Verify:
+
+- Production environment variables.
+- Authentication callback URLs.
+- Database migrations.
+- RLS policies.
+- AI integration.
+- Secure file storage.
+- Search performance.
+- Error monitoring.
+- Backups.
+- Privacy policy.
+- Terms of service.
+- Contact and support pages.
+- Data-sharing and consent policies.
+- Mobile compatibility.
+- Browser compatibility.
+- Accessibility.
+- Production database security.
+
+No fake partners, fake users, fabricated scholarships or artificial success statistics.
+
+The platform must provide a genuine experience even before external partnerships are established.
+
+---
+
+# 32. FINAL PRODUCT REQUIREMENTS
+
+The completed ICSN must be:
+
+1. A fully functioning student-first platform.
+2. Free to students for core features.
+3. Powered by a reliable AI assistant.
+4. Equipped with a meaningful 30-question discovery test.
+5. Capable of recommending relevant majors and career paths.
+6. Capable of matching students with suitable university opportunities.
+7. Equipped with scholarship discovery and application tracking.
+8. Equipped with a complete Portfolio Builder.
+9. Connected to internships, volunteering and remote opportunities.
+10. Capable of connecting students with verified organizations and startup opportunities.
+11. Built with secure student privacy and consent.
+12. Equipped with an Admin and institutional partner system.
+13. Responsive across mobile, tablet and desktop.
+14. Designed with the official ICSN premium purple-blue visual identity.
+15. Ready for reliable production operation.
+
+# FINAL INSTRUCTION
+
+Do not simply make ICSN look like a modern website.
+
+Build it as a coherent, working global education and career ecosystem.
+
+Preserve what already works.
+
+Fix what is broken.
+
+Complete what is missing.
+
+Build every feature around the real needs of students.
+
+Keep core student tools free.
+
+Make the AI genuinely useful.
+
+Make portfolio development a major priority.
+
+Make recommendations transparent and trustworthy.
+
+Make student privacy non-negotiable.
+
+Use the official ICSN design direction consistently.
+
+Do not invent partnerships or fake data.
+
+Do not claim unfinished functionality is complete.
+
+**Start by auditing the existing project, create a safe checkpoint, and then implement the platform in the specified order.**
+
+At the end of each phase, report:
+- What was implemented.
+- What existing functionality was preserved.
+- What was tested.
+- What remains incomplete.
+- Any blockers.
+
+Do not ask me to repeat requirements contained in this document.

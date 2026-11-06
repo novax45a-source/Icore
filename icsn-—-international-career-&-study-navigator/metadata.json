@@ -1,0 +1,6 @@
+{
+  "name": "ICSN — International Career & Study Navigator",
+  "description": "Your Future. Your Opportunities. Your Path. AI-powered global education guidance, 30-question assessment, university matching, scholarship finder, and student portfolio builder.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
